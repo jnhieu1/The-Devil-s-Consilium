@@ -31,6 +31,7 @@
             this.newButton = new System.Windows.Forms.Button();
             this.openButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // newButton
@@ -62,11 +63,21 @@
             this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "The Devil\'s Consilium";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(40, 83);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.newButton);
@@ -83,5 +94,6 @@
         private System.Windows.Forms.Button newButton;
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
