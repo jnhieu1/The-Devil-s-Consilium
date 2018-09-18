@@ -1,0 +1,11 @@
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\bin\Debug\DevilsConsilium.exe.config
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\bin\Debug\DevilsConsilium.exe
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\bin\Debug\DevilsConsilium.pdb
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.csprojResolveAssemblyReference.cache
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.Homepage.resources
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.PlannerPage.resources
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.Properties.Resources.resources
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.csproj.GenerateResource.Cache
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.csproj.CoreCompileInputs.cache
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.exe
+C:\Users\new\source\repos\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.pdb
