@@ -12,14 +12,14 @@ namespace DevilsConsilium
         string courseNumber;
         string courseName;
         string courseDescription;
-        int numOfCredits;
+        double numOfCredits;
         bool L, MA, CS, HU, SB, SQ, SG, C, G, H;
 
         public Courses()
         {
         }
 
-        public Courses(string courseNumber, string courseName, string courseDescription, int numOfCredits, bool l, bool mA, bool cS, bool hU, bool sB, bool sQ, bool sG, bool c, bool g, bool h)
+        public Courses(string courseNumber, string courseName, string courseDescription, double numOfCredits, bool l, bool mA, bool cS, bool hU, bool sB, bool sQ, bool sG, bool c, bool g, bool h)
         {
             this.courseNumber = courseNumber;
             this.courseName = courseName;
@@ -40,7 +40,7 @@ namespace DevilsConsilium
         public string CourseNumber { get => courseNumber; set => courseNumber = value; }
         public string CourseName { get => courseName; set => courseName = value; }
         public string CourseDescription { get => courseDescription; set => courseDescription = value; }
-        public int NumOfCredits { get => numOfCredits; set => numOfCredits = value; }
+        public double NumOfCredits { get => numOfCredits; set => numOfCredits = value; }
         public bool L1 { get => L; set => L = value; }
         public bool MA1 { get => MA; set => MA = value; }
         public bool CS1 { get => CS; set => CS = value; }

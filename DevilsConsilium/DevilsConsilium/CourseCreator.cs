@@ -411,8 +411,41 @@ namespace DevilsConsilium
             true, false, false, false, false, false, false, false, false, false
             );
 
+        Courses wpc148 = new Courses
+            (
+            "WPC148",
+            "Freshman Career Preparation",
+            "Building career skills, interests and strengths as a college student.",
+            0.25,
+            false, false, false, false, false, false, false, false, false, false
+            );
 
-        
+        Courses wpc248 = new Courses
+            (
+            "WPC248",
+            "Sophomore Career Preparation",
+            "Research methods and strategic thinking for finding internships.",
+            0.25,
+            false, false, false, false, false, false, false, false, false, false
+            );
+
+        Courses wpc348 = new Courses
+            (
+            "WPC348",
+            "Junior Career Preparation",
+            "Career relationship-building techniques and full-time, job-readiness skills.",
+            0.25,
+            false, false, false, false, false, false, false, false, false, false
+            );
+
+        Courses wpc448 = new Courses
+            (
+            "WPC448",
+            "Intensive Career Preparation",
+            "Intensive application of the job search cycle and processes for students still seeking post-graduation employment.",
+            0.25,
+            false, false, false, false, false, false, false, false, false, false
+            );
 
     }
 }

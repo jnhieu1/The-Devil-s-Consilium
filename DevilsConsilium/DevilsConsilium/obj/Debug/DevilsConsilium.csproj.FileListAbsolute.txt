@@ -20,3 +20,14 @@ C:\Users\Charlie\Source\Repos\The-Devil-s-Consilium3\DevilsConsilium\DevilsConsi
 C:\Users\Charlie\Source\Repos\The-Devil-s-Consilium3\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.csproj.CoreCompileInputs.cache
 C:\Users\Charlie\Source\Repos\The-Devil-s-Consilium3\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.exe
 C:\Users\Charlie\Source\Repos\The-Devil-s-Consilium3\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.pdb
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\bin\Debug\DevilsConsilium.exe.config
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\bin\Debug\DevilsConsilium.exe
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\bin\Debug\DevilsConsilium.pdb
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.csprojAssemblyReference.cache
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.Homepage.resources
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.PlannerPage.resources
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.Properties.Resources.resources
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.csproj.GenerateResource.cache
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.csproj.CoreCompileInputs.cache
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.exe
+C:\Users\Brady\Source\Repos\The-Devil-s-Consilium2\DevilsConsilium\DevilsConsilium\obj\Debug\DevilsConsilium.pdb
