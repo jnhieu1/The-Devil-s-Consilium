@@ -33,30 +33,31 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.courseGroupBox = new System.Windows.Forms.GroupBox();
+            this.searchResultListBox = new System.Windows.Forms.ListBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.year1GroupBox = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.yearOneSemesterTwoLable = new System.Windows.Forms.Label();
+            this.yearOneSemesterOneLable = new System.Windows.Forms.Label();
+            this.secondSemesterListBox = new System.Windows.Forms.ListBox();
+            this.firstSemesterListBox = new System.Windows.Forms.ListBox();
             this.year2GroupBox = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.yearTwoSemesterTwoLable = new System.Windows.Forms.Label();
+            this.yearTwoSemesterOneLable = new System.Windows.Forms.Label();
+            this.fourthSemesterListBox = new System.Windows.Forms.ListBox();
+            this.thirdSemesterListBox = new System.Windows.Forms.ListBox();
             this.year3GroupBox = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.listBox6 = new System.Windows.Forms.ListBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.yearThreeSemesterTwoLable = new System.Windows.Forms.Label();
+            this.yearThreeSemesterOneLable = new System.Windows.Forms.Label();
+            this.sixthSemesterListBox = new System.Windows.Forms.ListBox();
+            this.fifthSemesterListBox = new System.Windows.Forms.ListBox();
             this.year4GroupBox = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listBox8 = new System.Windows.Forms.ListBox();
-            this.listBox7 = new System.Windows.Forms.ListBox();
+            this.yearFourSemesterTwoLable = new System.Windows.Forms.Label();
+            this.yearFourSemesterOneLable = new System.Windows.Forms.Label();
+            this.eighthSemesterListBox = new System.Windows.Forms.ListBox();
+            this.seventhSemesterListBox = new System.Windows.Forms.ListBox();
             this.reportGroupBox = new System.Windows.Forms.GroupBox();
-            this.searchResultListBox = new System.Windows.Forms.ListBox();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.courseGroupBox.SuspendLayout();
             this.year1GroupBox.SuspendLayout();
@@ -67,32 +68,36 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(684, 25);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(912, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem1});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(40, 21);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // courseGroupBox
@@ -100,18 +105,31 @@
             this.courseGroupBox.Controls.Add(this.searchResultListBox);
             this.courseGroupBox.Controls.Add(this.searchButton);
             this.courseGroupBox.Controls.Add(this.searchTextBox);
-            this.courseGroupBox.Location = new System.Drawing.Point(12, 25);
+            this.courseGroupBox.Location = new System.Drawing.Point(16, 33);
+            this.courseGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.courseGroupBox.Name = "courseGroupBox";
-            this.courseGroupBox.Size = new System.Drawing.Size(128, 301);
+            this.courseGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.courseGroupBox.Size = new System.Drawing.Size(171, 401);
             this.courseGroupBox.TabIndex = 1;
             this.courseGroupBox.TabStop = false;
             this.courseGroupBox.Text = "Courses";
             // 
+            // searchResultListBox
+            // 
+            this.searchResultListBox.FormattingEnabled = true;
+            this.searchResultListBox.ItemHeight = 16;
+            this.searchResultListBox.Location = new System.Drawing.Point(8, 89);
+            this.searchResultListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchResultListBox.Name = "searchResultListBox";
+            this.searchResultListBox.Size = new System.Drawing.Size(152, 292);
+            this.searchResultListBox.TabIndex = 3;
+            // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(26, 40);
+            this.searchButton.Location = new System.Drawing.Point(35, 53);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 21);
+            this.searchButton.Size = new System.Drawing.Size(100, 28);
             this.searchButton.TabIndex = 1;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -119,231 +137,255 @@
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(7, 13);
+            this.searchTextBox.Location = new System.Drawing.Point(9, 17);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.ShortcutsEnabled = false;
-            this.searchTextBox.Size = new System.Drawing.Size(115, 21);
+            this.searchTextBox.Size = new System.Drawing.Size(152, 22);
             this.searchTextBox.TabIndex = 0;
             // 
             // year1GroupBox
             // 
-            this.year1GroupBox.Controls.Add(this.label6);
-            this.year1GroupBox.Controls.Add(this.label2);
-            this.year1GroupBox.Controls.Add(this.listBox2);
-            this.year1GroupBox.Controls.Add(this.listBox1);
-            this.year1GroupBox.Location = new System.Drawing.Point(173, 25);
+            this.year1GroupBox.Controls.Add(this.yearOneSemesterTwoLable);
+            this.year1GroupBox.Controls.Add(this.yearOneSemesterOneLable);
+            this.year1GroupBox.Controls.Add(this.secondSemesterListBox);
+            this.year1GroupBox.Controls.Add(this.firstSemesterListBox);
+            this.year1GroupBox.Location = new System.Drawing.Point(231, 33);
+            this.year1GroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.year1GroupBox.Name = "year1GroupBox";
-            this.year1GroupBox.Size = new System.Drawing.Size(499, 140);
+            this.year1GroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year1GroupBox.Size = new System.Drawing.Size(665, 187);
             this.year1GroupBox.TabIndex = 2;
             this.year1GroupBox.TabStop = false;
             this.year1GroupBox.Text = "Year 1 (Freshman)";
             // 
-            // label6
+            // yearOneSemesterTwoLable
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(252, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 12);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Semester 2";
+            this.yearOneSemesterTwoLable.AutoSize = true;
+            this.yearOneSemesterTwoLable.Location = new System.Drawing.Point(336, 27);
+            this.yearOneSemesterTwoLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.yearOneSemesterTwoLable.Name = "yearOneSemesterTwoLable";
+            this.yearOneSemesterTwoLable.Size = new System.Drawing.Size(80, 17);
+            this.yearOneSemesterTwoLable.TabIndex = 4;
+            this.yearOneSemesterTwoLable.Text = "Semester 2";
             // 
-            // label2
+            // yearOneSemesterOneLable
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Semester 1";
+            this.yearOneSemesterOneLable.AutoSize = true;
+            this.yearOneSemesterOneLable.Location = new System.Drawing.Point(27, 27);
+            this.yearOneSemesterOneLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.yearOneSemesterOneLable.Name = "yearOneSemesterOneLable";
+            this.yearOneSemesterOneLable.Size = new System.Drawing.Size(80, 17);
+            this.yearOneSemesterOneLable.TabIndex = 3;
+            this.yearOneSemesterOneLable.Text = "Semester 1";
             // 
-            // listBox2
+            // secondSemesterListBox
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 12;
-            this.listBox2.Location = new System.Drawing.Point(255, 35);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(219, 100);
-            this.listBox2.TabIndex = 1;
+            this.secondSemesterListBox.FormattingEnabled = true;
+            this.secondSemesterListBox.ItemHeight = 16;
+            this.secondSemesterListBox.Location = new System.Drawing.Point(340, 47);
+            this.secondSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.secondSemesterListBox.Name = "secondSemesterListBox";
+            this.secondSemesterListBox.Size = new System.Drawing.Size(291, 132);
+            this.secondSemesterListBox.TabIndex = 1;
             // 
-            // listBox1
+            // firstSemesterListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(20, 35);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(219, 100);
-            this.listBox1.TabIndex = 0;
+            this.firstSemesterListBox.FormattingEnabled = true;
+            this.firstSemesterListBox.ItemHeight = 16;
+            this.firstSemesterListBox.Location = new System.Drawing.Point(27, 47);
+            this.firstSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firstSemesterListBox.Name = "firstSemesterListBox";
+            this.firstSemesterListBox.Size = new System.Drawing.Size(291, 132);
+            this.firstSemesterListBox.TabIndex = 0;
             // 
             // year2GroupBox
             // 
-            this.year2GroupBox.Controls.Add(this.label7);
-            this.year2GroupBox.Controls.Add(this.label3);
-            this.year2GroupBox.Controls.Add(this.listBox4);
-            this.year2GroupBox.Controls.Add(this.listBox3);
-            this.year2GroupBox.Location = new System.Drawing.Point(173, 172);
+            this.year2GroupBox.Controls.Add(this.yearTwoSemesterTwoLable);
+            this.year2GroupBox.Controls.Add(this.yearTwoSemesterOneLable);
+            this.year2GroupBox.Controls.Add(this.fourthSemesterListBox);
+            this.year2GroupBox.Controls.Add(this.thirdSemesterListBox);
+            this.year2GroupBox.Location = new System.Drawing.Point(231, 229);
+            this.year2GroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.year2GroupBox.Name = "year2GroupBox";
-            this.year2GroupBox.Size = new System.Drawing.Size(499, 140);
+            this.year2GroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year2GroupBox.Size = new System.Drawing.Size(665, 187);
             this.year2GroupBox.TabIndex = 3;
             this.year2GroupBox.TabStop = false;
             this.year2GroupBox.Text = "Year 2 (Sophomore)";
             // 
-            // label7
+            // yearTwoSemesterTwoLable
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(252, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 12);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Semester 2";
+            this.yearTwoSemesterTwoLable.AutoSize = true;
+            this.yearTwoSemesterTwoLable.Location = new System.Drawing.Point(336, 27);
+            this.yearTwoSemesterTwoLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.yearTwoSemesterTwoLable.Name = "yearTwoSemesterTwoLable";
+            this.yearTwoSemesterTwoLable.Size = new System.Drawing.Size(80, 17);
+            this.yearTwoSemesterTwoLable.TabIndex = 5;
+            this.yearTwoSemesterTwoLable.Text = "Semester 2";
             // 
-            // label3
+            // yearTwoSemesterOneLable
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 12);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Semester 1";
+            this.yearTwoSemesterOneLable.AutoSize = true;
+            this.yearTwoSemesterOneLable.Location = new System.Drawing.Point(27, 27);
+            this.yearTwoSemesterOneLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.yearTwoSemesterOneLable.Name = "yearTwoSemesterOneLable";
+            this.yearTwoSemesterOneLable.Size = new System.Drawing.Size(80, 17);
+            this.yearTwoSemesterOneLable.TabIndex = 4;
+            this.yearTwoSemesterOneLable.Text = "Semester 1";
             // 
-            // listBox4
+            // fourthSemesterListBox
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 12;
-            this.listBox4.Location = new System.Drawing.Point(255, 35);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(219, 100);
-            this.listBox4.TabIndex = 3;
+            this.fourthSemesterListBox.FormattingEnabled = true;
+            this.fourthSemesterListBox.ItemHeight = 16;
+            this.fourthSemesterListBox.Location = new System.Drawing.Point(340, 47);
+            this.fourthSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fourthSemesterListBox.Name = "fourthSemesterListBox";
+            this.fourthSemesterListBox.Size = new System.Drawing.Size(291, 132);
+            this.fourthSemesterListBox.TabIndex = 3;
             // 
-            // listBox3
+            // thirdSemesterListBox
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 12;
-            this.listBox3.Location = new System.Drawing.Point(20, 35);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(219, 100);
-            this.listBox3.TabIndex = 2;
+            this.thirdSemesterListBox.FormattingEnabled = true;
+            this.thirdSemesterListBox.ItemHeight = 16;
+            this.thirdSemesterListBox.Location = new System.Drawing.Point(27, 47);
+            this.thirdSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.thirdSemesterListBox.Name = "thirdSemesterListBox";
+            this.thirdSemesterListBox.Size = new System.Drawing.Size(291, 132);
+            this.thirdSemesterListBox.TabIndex = 2;
             // 
             // year3GroupBox
             // 
-            this.year3GroupBox.Controls.Add(this.label8);
-            this.year3GroupBox.Controls.Add(this.label4);
-            this.year3GroupBox.Controls.Add(this.listBox6);
-            this.year3GroupBox.Controls.Add(this.listBox5);
-            this.year3GroupBox.Location = new System.Drawing.Point(173, 318);
+            this.year3GroupBox.Controls.Add(this.yearThreeSemesterTwoLable);
+            this.year3GroupBox.Controls.Add(this.yearThreeSemesterOneLable);
+            this.year3GroupBox.Controls.Add(this.sixthSemesterListBox);
+            this.year3GroupBox.Controls.Add(this.fifthSemesterListBox);
+            this.year3GroupBox.Location = new System.Drawing.Point(231, 424);
+            this.year3GroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.year3GroupBox.Name = "year3GroupBox";
-            this.year3GroupBox.Size = new System.Drawing.Size(499, 140);
+            this.year3GroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year3GroupBox.Size = new System.Drawing.Size(665, 187);
             this.year3GroupBox.TabIndex = 3;
             this.year3GroupBox.TabStop = false;
             this.year3GroupBox.Text = "Year 3 (Junior)";
             // 
-            // label8
+            // yearThreeSemesterTwoLable
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(252, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 12);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Semester 2";
+            this.yearThreeSemesterTwoLable.AutoSize = true;
+            this.yearThreeSemesterTwoLable.Location = new System.Drawing.Point(336, 27);
+            this.yearThreeSemesterTwoLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.yearThreeSemesterTwoLable.Name = "yearThreeSemesterTwoLable";
+            this.yearThreeSemesterTwoLable.Size = new System.Drawing.Size(80, 17);
+            this.yearThreeSemesterTwoLable.TabIndex = 6;
+            this.yearThreeSemesterTwoLable.Text = "Semester 2";
             // 
-            // label4
+            // yearThreeSemesterOneLable
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 12);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Semester 1";
+            this.yearThreeSemesterOneLable.AutoSize = true;
+            this.yearThreeSemesterOneLable.Location = new System.Drawing.Point(27, 27);
+            this.yearThreeSemesterOneLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.yearThreeSemesterOneLable.Name = "yearThreeSemesterOneLable";
+            this.yearThreeSemesterOneLable.Size = new System.Drawing.Size(80, 17);
+            this.yearThreeSemesterOneLable.TabIndex = 5;
+            this.yearThreeSemesterOneLable.Text = "Semester 1";
             // 
-            // listBox6
+            // sixthSemesterListBox
             // 
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.ItemHeight = 12;
-            this.listBox6.Location = new System.Drawing.Point(255, 35);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(219, 100);
-            this.listBox6.TabIndex = 5;
+            this.sixthSemesterListBox.FormattingEnabled = true;
+            this.sixthSemesterListBox.ItemHeight = 16;
+            this.sixthSemesterListBox.Location = new System.Drawing.Point(340, 47);
+            this.sixthSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sixthSemesterListBox.Name = "sixthSemesterListBox";
+            this.sixthSemesterListBox.Size = new System.Drawing.Size(291, 132);
+            this.sixthSemesterListBox.TabIndex = 5;
             // 
-            // listBox5
+            // fifthSemesterListBox
             // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.ItemHeight = 12;
-            this.listBox5.Location = new System.Drawing.Point(20, 35);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(219, 100);
-            this.listBox5.TabIndex = 4;
+            this.fifthSemesterListBox.FormattingEnabled = true;
+            this.fifthSemesterListBox.ItemHeight = 16;
+            this.fifthSemesterListBox.Location = new System.Drawing.Point(27, 47);
+            this.fifthSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fifthSemesterListBox.Name = "fifthSemesterListBox";
+            this.fifthSemesterListBox.Size = new System.Drawing.Size(291, 132);
+            this.fifthSemesterListBox.TabIndex = 4;
             // 
             // year4GroupBox
             // 
-            this.year4GroupBox.Controls.Add(this.label9);
-            this.year4GroupBox.Controls.Add(this.label5);
-            this.year4GroupBox.Controls.Add(this.listBox8);
-            this.year4GroupBox.Controls.Add(this.listBox7);
-            this.year4GroupBox.Location = new System.Drawing.Point(173, 463);
+            this.year4GroupBox.Controls.Add(this.yearFourSemesterTwoLable);
+            this.year4GroupBox.Controls.Add(this.yearFourSemesterOneLable);
+            this.year4GroupBox.Controls.Add(this.eighthSemesterListBox);
+            this.year4GroupBox.Controls.Add(this.seventhSemesterListBox);
+            this.year4GroupBox.Location = new System.Drawing.Point(231, 617);
+            this.year4GroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.year4GroupBox.Name = "year4GroupBox";
-            this.year4GroupBox.Size = new System.Drawing.Size(499, 140);
+            this.year4GroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year4GroupBox.Size = new System.Drawing.Size(665, 187);
             this.year4GroupBox.TabIndex = 3;
             this.year4GroupBox.TabStop = false;
             this.year4GroupBox.Text = "Year 4 (Senior)";
             // 
-            // label9
+            // yearFourSemesterTwoLable
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(252, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 12);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Semester 2";
+            this.yearFourSemesterTwoLable.AutoSize = true;
+            this.yearFourSemesterTwoLable.Location = new System.Drawing.Point(336, 27);
+            this.yearFourSemesterTwoLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.yearFourSemesterTwoLable.Name = "yearFourSemesterTwoLable";
+            this.yearFourSemesterTwoLable.Size = new System.Drawing.Size(80, 17);
+            this.yearFourSemesterTwoLable.TabIndex = 5;
+            this.yearFourSemesterTwoLable.Text = "Semester 2";
             // 
-            // label5
+            // yearFourSemesterOneLable
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Semester 1";
+            this.yearFourSemesterOneLable.AutoSize = true;
+            this.yearFourSemesterOneLable.Location = new System.Drawing.Point(27, 27);
+            this.yearFourSemesterOneLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.yearFourSemesterOneLable.Name = "yearFourSemesterOneLable";
+            this.yearFourSemesterOneLable.Size = new System.Drawing.Size(80, 17);
+            this.yearFourSemesterOneLable.TabIndex = 6;
+            this.yearFourSemesterOneLable.Text = "Semester 1";
             // 
-            // listBox8
+            // eighthSemesterListBox
             // 
-            this.listBox8.FormattingEnabled = true;
-            this.listBox8.ItemHeight = 12;
-            this.listBox8.Location = new System.Drawing.Point(255, 35);
-            this.listBox8.Name = "listBox8";
-            this.listBox8.Size = new System.Drawing.Size(219, 100);
-            this.listBox8.TabIndex = 7;
+            this.eighthSemesterListBox.FormattingEnabled = true;
+            this.eighthSemesterListBox.ItemHeight = 16;
+            this.eighthSemesterListBox.Location = new System.Drawing.Point(340, 47);
+            this.eighthSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.eighthSemesterListBox.Name = "eighthSemesterListBox";
+            this.eighthSemesterListBox.Size = new System.Drawing.Size(291, 132);
+            this.eighthSemesterListBox.TabIndex = 7;
             // 
-            // listBox7
+            // seventhSemesterListBox
             // 
-            this.listBox7.FormattingEnabled = true;
-            this.listBox7.ItemHeight = 12;
-            this.listBox7.Location = new System.Drawing.Point(20, 35);
-            this.listBox7.Name = "listBox7";
-            this.listBox7.Size = new System.Drawing.Size(219, 100);
-            this.listBox7.TabIndex = 6;
+            this.seventhSemesterListBox.FormattingEnabled = true;
+            this.seventhSemesterListBox.ItemHeight = 16;
+            this.seventhSemesterListBox.Location = new System.Drawing.Point(27, 47);
+            this.seventhSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.seventhSemesterListBox.Name = "seventhSemesterListBox";
+            this.seventhSemesterListBox.Size = new System.Drawing.Size(291, 132);
+            this.seventhSemesterListBox.TabIndex = 6;
             // 
             // reportGroupBox
             // 
-            this.reportGroupBox.Location = new System.Drawing.Point(13, 338);
+            this.reportGroupBox.Location = new System.Drawing.Point(17, 451);
+            this.reportGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportGroupBox.Name = "reportGroupBox";
-            this.reportGroupBox.Size = new System.Drawing.Size(127, 250);
+            this.reportGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportGroupBox.Size = new System.Drawing.Size(169, 333);
             this.reportGroupBox.TabIndex = 4;
             this.reportGroupBox.TabStop = false;
             this.reportGroupBox.Text = "Report";
             // 
-            // searchResultListBox
+            // exitToolStripMenuItem1
             // 
-            this.searchResultListBox.FormattingEnabled = true;
-            this.searchResultListBox.ItemHeight = 12;
-            this.searchResultListBox.Location = new System.Drawing.Point(6, 67);
-            this.searchResultListBox.Name = "searchResultListBox";
-            this.searchResultListBox.Size = new System.Drawing.Size(115, 220);
-            this.searchResultListBox.TabIndex = 3;
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.exitToolStripMenuItem1.Text = "&Exit";
             // 
             // PlannerPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 611);
+            this.ClientSize = new System.Drawing.Size(912, 815);
             this.Controls.Add(this.reportGroupBox);
             this.Controls.Add(this.year4GroupBox);
             this.Controls.Add(this.year3GroupBox);
@@ -352,6 +394,7 @@
             this.Controls.Add(this.courseGroupBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PlannerPage";
             this.Text = "Devil\'s Consilium";
             this.menuStrip1.ResumeLayout(false);
@@ -382,26 +425,27 @@
         private System.Windows.Forms.GroupBox year2GroupBox;
         private System.Windows.Forms.GroupBox year3GroupBox;
         private System.Windows.Forms.GroupBox year4GroupBox;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox6;
-        private System.Windows.Forms.ListBox listBox5;
-        private System.Windows.Forms.ListBox listBox8;
-        private System.Windows.Forms.ListBox listBox7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox secondSemesterListBox;
+        private System.Windows.Forms.ListBox firstSemesterListBox;
+        private System.Windows.Forms.ListBox fourthSemesterListBox;
+        private System.Windows.Forms.ListBox thirdSemesterListBox;
+        private System.Windows.Forms.ListBox sixthSemesterListBox;
+        private System.Windows.Forms.ListBox fifthSemesterListBox;
+        private System.Windows.Forms.ListBox eighthSemesterListBox;
+        private System.Windows.Forms.ListBox seventhSemesterListBox;
+        private System.Windows.Forms.Label yearOneSemesterTwoLable;
+        private System.Windows.Forms.Label yearOneSemesterOneLable;
+        private System.Windows.Forms.Label yearTwoSemesterTwoLable;
+        private System.Windows.Forms.Label yearTwoSemesterOneLable;
+        private System.Windows.Forms.Label yearThreeSemesterTwoLable;
+        private System.Windows.Forms.Label yearThreeSemesterOneLable;
+        private System.Windows.Forms.Label yearFourSemesterTwoLable;
+        private System.Windows.Forms.Label yearFourSemesterOneLable;
         private System.Windows.Forms.GroupBox reportGroupBox;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.ListBox searchResultListBox;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
     }
 }
 
