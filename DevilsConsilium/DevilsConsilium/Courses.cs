@@ -13,7 +13,7 @@ namespace DevilsConsilium
         string courseName;
         string courseDescription;
         double numOfCredits;
-        bool L, MA, CS, HU, SB, SQ, SG, C, G, H;
+        bool l, mA, cS, hU, sB, sQ, sG, c, g, h;
 
         public Courses()
         {
@@ -25,31 +25,31 @@ namespace DevilsConsilium
             this.courseName = courseName;
             this.courseDescription = courseDescription;
             this.numOfCredits = numOfCredits;
-            L = l;
-            MA = mA;
-            CS = cS;
-            HU = hU;
-            SB = sB;
-            SQ = sQ;
-            SG = sG;
-            C = c;
-            G = g;
-            H = h;
+            this.l = l;
+            this.mA = mA;
+            this.cS = cS;
+            this.hU = hU;
+            this.sB = sB;
+            this.sQ = sQ;
+            this.sG = sG;
+            this.c = c;
+            this.g = g;
+            this.h = h;
         }
 
         public string CourseNumber { get => courseNumber; set => courseNumber = value; }
         public string CourseName { get => courseName; set => courseName = value; }
         public string CourseDescription { get => courseDescription; set => courseDescription = value; }
         public double NumOfCredits { get => numOfCredits; set => numOfCredits = value; }
-        public bool L1 { get => L; set => L = value; }
-        public bool MA1 { get => MA; set => MA = value; }
-        public bool CS1 { get => CS; set => CS = value; }
-        public bool HU1 { get => HU; set => HU = value; }
-        public bool SB1 { get => SB; set => SB = value; }
-        public bool SQ1 { get => SQ; set => SQ = value; }
-        public bool SG1 { get => SG; set => SG = value; }
-        public bool C1 { get => C; set => C = value; }
-        public bool G1 { get => G; set => G = value; }
-        public bool H1 { get => H; set => H = value; }
+        public bool L { get => l; set => l = value; }
+        public bool MA { get => mA; set => mA = value; }
+        public bool CS { get => cS; set => cS = value; }
+        public bool HU { get => hU; set => hU = value; }
+        public bool SB { get => sB; set => sB = value; }
+        public bool SQ { get => sQ; set => sQ = value; }
+        public bool SG { get => sG; set => sG = value; }
+        public bool C { get => c; set => c = value; }
+        public bool G { get => g; set => g = value; }
+        public bool H { get => h; set => h = value; }
     }
 }
