@@ -32,6 +32,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.courseGroupBox = new System.Windows.Forms.GroupBox();
             this.searchResultListBox = new System.Windows.Forms.ListBox();
             this.searchButton = new System.Windows.Forms.Button();
@@ -57,13 +58,17 @@
             this.eighthSemesterListBox = new System.Windows.Forms.ListBox();
             this.seventhSemesterListBox = new System.Windows.Forms.ListBox();
             this.reportGroupBox = new System.Windows.Forms.GroupBox();
-            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.courseNumberLabel = new System.Windows.Forms.Label();
+            this.courseNameLabel = new System.Windows.Forms.Label();
+            this.courseDescriptionLabel = new System.Windows.Forms.Label();
+            this.numCreditLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.courseGroupBox.SuspendLayout();
             this.year1GroupBox.SuspendLayout();
             this.year2GroupBox.SuspendLayout();
             this.year3GroupBox.SuspendLayout();
             this.year4GroupBox.SuspendLayout();
+            this.reportGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -100,15 +105,21 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(108, 26);
+            this.exitToolStripMenuItem1.Text = "&Exit";
+            // 
             // courseGroupBox
             // 
             this.courseGroupBox.Controls.Add(this.searchResultListBox);
             this.courseGroupBox.Controls.Add(this.searchButton);
             this.courseGroupBox.Controls.Add(this.searchTextBox);
             this.courseGroupBox.Location = new System.Drawing.Point(16, 33);
-            this.courseGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.courseGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.courseGroupBox.Name = "courseGroupBox";
-            this.courseGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.courseGroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.courseGroupBox.Size = new System.Drawing.Size(171, 401);
             this.courseGroupBox.TabIndex = 1;
             this.courseGroupBox.TabStop = false;
@@ -119,15 +130,16 @@
             this.searchResultListBox.FormattingEnabled = true;
             this.searchResultListBox.ItemHeight = 16;
             this.searchResultListBox.Location = new System.Drawing.Point(8, 89);
-            this.searchResultListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchResultListBox.Margin = new System.Windows.Forms.Padding(4);
             this.searchResultListBox.Name = "searchResultListBox";
             this.searchResultListBox.Size = new System.Drawing.Size(152, 292);
             this.searchResultListBox.TabIndex = 3;
+            this.searchResultListBox.SelectedIndexChanged += new System.EventHandler(this.searchResultListBox_SelectedIndexChanged);
             // 
             // searchButton
             // 
             this.searchButton.Location = new System.Drawing.Point(35, 53);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(100, 28);
             this.searchButton.TabIndex = 1;
@@ -138,7 +150,7 @@
             // searchTextBox
             // 
             this.searchTextBox.Location = new System.Drawing.Point(9, 17);
-            this.searchTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.ShortcutsEnabled = false;
             this.searchTextBox.Size = new System.Drawing.Size(152, 22);
@@ -151,9 +163,9 @@
             this.year1GroupBox.Controls.Add(this.secondSemesterListBox);
             this.year1GroupBox.Controls.Add(this.firstSemesterListBox);
             this.year1GroupBox.Location = new System.Drawing.Point(231, 33);
-            this.year1GroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year1GroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.year1GroupBox.Name = "year1GroupBox";
-            this.year1GroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year1GroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.year1GroupBox.Size = new System.Drawing.Size(665, 187);
             this.year1GroupBox.TabIndex = 2;
             this.year1GroupBox.TabStop = false;
@@ -184,7 +196,7 @@
             this.secondSemesterListBox.FormattingEnabled = true;
             this.secondSemesterListBox.ItemHeight = 16;
             this.secondSemesterListBox.Location = new System.Drawing.Point(340, 47);
-            this.secondSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.secondSemesterListBox.Margin = new System.Windows.Forms.Padding(4);
             this.secondSemesterListBox.Name = "secondSemesterListBox";
             this.secondSemesterListBox.Size = new System.Drawing.Size(291, 132);
             this.secondSemesterListBox.TabIndex = 1;
@@ -194,7 +206,7 @@
             this.firstSemesterListBox.FormattingEnabled = true;
             this.firstSemesterListBox.ItemHeight = 16;
             this.firstSemesterListBox.Location = new System.Drawing.Point(27, 47);
-            this.firstSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firstSemesterListBox.Margin = new System.Windows.Forms.Padding(4);
             this.firstSemesterListBox.Name = "firstSemesterListBox";
             this.firstSemesterListBox.Size = new System.Drawing.Size(291, 132);
             this.firstSemesterListBox.TabIndex = 0;
@@ -206,9 +218,9 @@
             this.year2GroupBox.Controls.Add(this.fourthSemesterListBox);
             this.year2GroupBox.Controls.Add(this.thirdSemesterListBox);
             this.year2GroupBox.Location = new System.Drawing.Point(231, 229);
-            this.year2GroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year2GroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.year2GroupBox.Name = "year2GroupBox";
-            this.year2GroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year2GroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.year2GroupBox.Size = new System.Drawing.Size(665, 187);
             this.year2GroupBox.TabIndex = 3;
             this.year2GroupBox.TabStop = false;
@@ -239,7 +251,7 @@
             this.fourthSemesterListBox.FormattingEnabled = true;
             this.fourthSemesterListBox.ItemHeight = 16;
             this.fourthSemesterListBox.Location = new System.Drawing.Point(340, 47);
-            this.fourthSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fourthSemesterListBox.Margin = new System.Windows.Forms.Padding(4);
             this.fourthSemesterListBox.Name = "fourthSemesterListBox";
             this.fourthSemesterListBox.Size = new System.Drawing.Size(291, 132);
             this.fourthSemesterListBox.TabIndex = 3;
@@ -249,7 +261,7 @@
             this.thirdSemesterListBox.FormattingEnabled = true;
             this.thirdSemesterListBox.ItemHeight = 16;
             this.thirdSemesterListBox.Location = new System.Drawing.Point(27, 47);
-            this.thirdSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.thirdSemesterListBox.Margin = new System.Windows.Forms.Padding(4);
             this.thirdSemesterListBox.Name = "thirdSemesterListBox";
             this.thirdSemesterListBox.Size = new System.Drawing.Size(291, 132);
             this.thirdSemesterListBox.TabIndex = 2;
@@ -261,9 +273,9 @@
             this.year3GroupBox.Controls.Add(this.sixthSemesterListBox);
             this.year3GroupBox.Controls.Add(this.fifthSemesterListBox);
             this.year3GroupBox.Location = new System.Drawing.Point(231, 424);
-            this.year3GroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year3GroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.year3GroupBox.Name = "year3GroupBox";
-            this.year3GroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year3GroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.year3GroupBox.Size = new System.Drawing.Size(665, 187);
             this.year3GroupBox.TabIndex = 3;
             this.year3GroupBox.TabStop = false;
@@ -294,7 +306,7 @@
             this.sixthSemesterListBox.FormattingEnabled = true;
             this.sixthSemesterListBox.ItemHeight = 16;
             this.sixthSemesterListBox.Location = new System.Drawing.Point(340, 47);
-            this.sixthSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sixthSemesterListBox.Margin = new System.Windows.Forms.Padding(4);
             this.sixthSemesterListBox.Name = "sixthSemesterListBox";
             this.sixthSemesterListBox.Size = new System.Drawing.Size(291, 132);
             this.sixthSemesterListBox.TabIndex = 5;
@@ -304,7 +316,7 @@
             this.fifthSemesterListBox.FormattingEnabled = true;
             this.fifthSemesterListBox.ItemHeight = 16;
             this.fifthSemesterListBox.Location = new System.Drawing.Point(27, 47);
-            this.fifthSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fifthSemesterListBox.Margin = new System.Windows.Forms.Padding(4);
             this.fifthSemesterListBox.Name = "fifthSemesterListBox";
             this.fifthSemesterListBox.Size = new System.Drawing.Size(291, 132);
             this.fifthSemesterListBox.TabIndex = 4;
@@ -316,9 +328,9 @@
             this.year4GroupBox.Controls.Add(this.eighthSemesterListBox);
             this.year4GroupBox.Controls.Add(this.seventhSemesterListBox);
             this.year4GroupBox.Location = new System.Drawing.Point(231, 617);
-            this.year4GroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year4GroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.year4GroupBox.Name = "year4GroupBox";
-            this.year4GroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.year4GroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.year4GroupBox.Size = new System.Drawing.Size(665, 187);
             this.year4GroupBox.TabIndex = 3;
             this.year4GroupBox.TabStop = false;
@@ -349,7 +361,7 @@
             this.eighthSemesterListBox.FormattingEnabled = true;
             this.eighthSemesterListBox.ItemHeight = 16;
             this.eighthSemesterListBox.Location = new System.Drawing.Point(340, 47);
-            this.eighthSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.eighthSemesterListBox.Margin = new System.Windows.Forms.Padding(4);
             this.eighthSemesterListBox.Name = "eighthSemesterListBox";
             this.eighthSemesterListBox.Size = new System.Drawing.Size(291, 132);
             this.eighthSemesterListBox.TabIndex = 7;
@@ -359,27 +371,61 @@
             this.seventhSemesterListBox.FormattingEnabled = true;
             this.seventhSemesterListBox.ItemHeight = 16;
             this.seventhSemesterListBox.Location = new System.Drawing.Point(27, 47);
-            this.seventhSemesterListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.seventhSemesterListBox.Margin = new System.Windows.Forms.Padding(4);
             this.seventhSemesterListBox.Name = "seventhSemesterListBox";
             this.seventhSemesterListBox.Size = new System.Drawing.Size(291, 132);
             this.seventhSemesterListBox.TabIndex = 6;
             // 
             // reportGroupBox
             // 
+            this.reportGroupBox.Controls.Add(this.numCreditLabel);
+            this.reportGroupBox.Controls.Add(this.courseDescriptionLabel);
+            this.reportGroupBox.Controls.Add(this.courseNameLabel);
+            this.reportGroupBox.Controls.Add(this.courseNumberLabel);
             this.reportGroupBox.Location = new System.Drawing.Point(17, 451);
-            this.reportGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.reportGroupBox.Name = "reportGroupBox";
-            this.reportGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportGroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.reportGroupBox.Size = new System.Drawing.Size(169, 333);
             this.reportGroupBox.TabIndex = 4;
             this.reportGroupBox.TabStop = false;
             this.reportGroupBox.Text = "Report";
             // 
-            // exitToolStripMenuItem1
+            // courseNumberLabel
             // 
-            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
-            this.exitToolStripMenuItem1.Text = "&Exit";
+            this.courseNumberLabel.AutoSize = true;
+            this.courseNumberLabel.Location = new System.Drawing.Point(13, 40);
+            this.courseNumberLabel.Name = "courseNumberLabel";
+            this.courseNumberLabel.Size = new System.Drawing.Size(103, 17);
+            this.courseNumberLabel.TabIndex = 0;
+            this.courseNumberLabel.Text = "CourseNumber";
+            // 
+            // courseNameLabel
+            // 
+            this.courseNameLabel.AutoSize = true;
+            this.courseNameLabel.Location = new System.Drawing.Point(13, 68);
+            this.courseNameLabel.Name = "courseNameLabel";
+            this.courseNameLabel.Size = new System.Drawing.Size(90, 17);
+            this.courseNameLabel.TabIndex = 1;
+            this.courseNameLabel.Text = "CourseName";
+            // 
+            // courseDescriptionLabel
+            // 
+            this.courseDescriptionLabel.AutoSize = true;
+            this.courseDescriptionLabel.Location = new System.Drawing.Point(13, 97);
+            this.courseDescriptionLabel.Name = "courseDescriptionLabel";
+            this.courseDescriptionLabel.Size = new System.Drawing.Size(159, 17);
+            this.courseDescriptionLabel.TabIndex = 2;
+            this.courseDescriptionLabel.Text = "CourseDescriptionLabel";
+            // 
+            // numCreditLabel
+            // 
+            this.numCreditLabel.AutoSize = true;
+            this.numCreditLabel.Location = new System.Drawing.Point(13, 213);
+            this.numCreditLabel.Name = "numCreditLabel";
+            this.numCreditLabel.Size = new System.Drawing.Size(130, 17);
+            this.numCreditLabel.TabIndex = 3;
+            this.numCreditLabel.Text = "CreditNumberLabel";
             // 
             // PlannerPage
             // 
@@ -394,7 +440,7 @@
             this.Controls.Add(this.courseGroupBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PlannerPage";
             this.Text = "Devil\'s Consilium";
             this.menuStrip1.ResumeLayout(false);
@@ -409,6 +455,8 @@
             this.year3GroupBox.PerformLayout();
             this.year4GroupBox.ResumeLayout(false);
             this.year4GroupBox.PerformLayout();
+            this.reportGroupBox.ResumeLayout(false);
+            this.reportGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,6 +494,10 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.ListBox searchResultListBox;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.Label courseNumberLabel;
+        private System.Windows.Forms.Label courseNameLabel;
+        private System.Windows.Forms.Label numCreditLabel;
+        private System.Windows.Forms.Label courseDescriptionLabel;
     }
 }
 

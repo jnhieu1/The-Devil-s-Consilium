@@ -12,15 +12,32 @@ namespace DevilsConsilium
 {
     public partial class PlannerPage : Form
     {
+        List<Courses> courseList;
+
         public PlannerPage()
         {
             InitializeComponent();
+
+            CourseCreator courseCreator = new CourseCreator();
+            courseList = courseCreator.InitiateList();
+            searchResultListBox.DisplayMember = "CourseNumber";
+
+            for(int i = 0; i < courseList.Count; i++)
+            {
+                searchResultListBox.Items.Add(courseList[i]);
+            }
+
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
             string searchText = "";
             searchText = searchTextBox.Text;
+        }
+
+        private void searchResultListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            reportGroupBox = courseList[searchResultListBox.SelectedIndex].ToString();
         }
     }
 }
