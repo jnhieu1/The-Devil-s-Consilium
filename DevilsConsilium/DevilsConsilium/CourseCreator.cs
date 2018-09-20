@@ -82,6 +82,15 @@ namespace DevilsConsilium
             false, false, false, false, false, false, false, false, false, false
             );
 
+        Courses cis440 = new Courses
+            (
+            "CIS440",
+            "Capstone in Information Systems",
+            "Offers a capstone experience integrating concepts from the business as well as the technology curricula. Students analyze, propose and develop a full technology solution for a business enterprise.",
+            3,
+            true, false, false, false, false, false, false, false, false, false
+            );
+
         Courses wpc101 = new Courses
             (
             "WPC101",
@@ -285,6 +294,15 @@ namespace DevilsConsilium
             false, false, false, false, false, false, false, true, false, false
            );
 
+        Courses afr333 = new Courses
+            (
+            "AFR333",
+            "American Ethnic Literature",
+            "Examines America's multiethnic identity through works of literature that depict American ethnic, gender, and class sensibilities.",
+            3,
+            false, false, false, true, false, false, false, true, false, false
+            );
+
         Courses scm300 = new Courses
             (
             "SCM300",
@@ -357,6 +375,41 @@ namespace DevilsConsilium
             false, false, false, false, false, false, false, false, true, false
             );
 
+        Courses fin300 = new Courses
+            (
+            "FIN300",
+            "Fundamentals of Finance"
+            "Theory and problems in financial management of business enterprises.",
+            3,
+            false, false, false, false, false, false, false, false, false, false
+            );
+
+        Courses mgt300 = new Courses
+            (
+            "MGT300",
+            "Organization and Management Leadership",
+            "Analyzes strategic, behavioral, and human resource management perspectives, including principles of strategic management and leadership of human resources.",
+            3,
+            false, false, false, false, false, false, false, false, false, false
+            );
+
+        Courses les305 = new Courses
+            (
+            "LES305",
+            "Business Law and Ethics for Managers",
+            "Legal theories, ethical issues, and regulatory climate affecting business policies and decisions.",
+            3,
+            false, false, false, false, false, false, false, false, false, false
+            );
+
+        Courses wpc480 = new Courses
+            (
+            "WPC480",
+            "W.P. Carey Capstone Course",
+            "Develops a general manager's or business owner's perspective on how organizations can create value. Creating long-run value by repeatedly producing goods and services that customers will buy at prices that cover the costs of producing them is the key to success for business organizations. Analyzing current and future environments to understand threats and opportunities in various institutional settings around the world is the starting point for thinking about how an organization might create value and gain sustainable competitive advantage. Evaluates the impact of institutional settings in different countries and ethical values on decision making. Students learn how to successfully manage relations with key stakeholders including customers, employees, suppliers of capital as well as other component goods and services, and stakeholders from various levels of government in different countries.",
+            3,
+            true, false, false, false, false, false, false, false, false, false
+            );
 
 
         
