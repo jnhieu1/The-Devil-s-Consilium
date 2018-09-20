@@ -16,5 +16,11 @@ namespace DevilsConsilium
         {
             InitializeComponent();
         }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchText = "";
+            searchText = searchTextBox.Text;
+        }
     }
 }
