@@ -378,7 +378,7 @@ namespace DevilsConsilium
         Courses fin300 = new Courses
             (
             "FIN300",
-            "Fundamentals of Finance"
+            "Fundamentals of Finance",
             "Theory and problems in financial management of business enterprises.",
             3,
             false, false, false, false, false, false, false, false, false, false
