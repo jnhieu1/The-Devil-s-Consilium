@@ -228,6 +228,7 @@
             // 
             // yearOneFallListBox
             // 
+            this.yearOneFallListBox.AllowDrop = true;
             this.yearOneFallListBox.FormattingEnabled = true;
             this.yearOneFallListBox.ItemHeight = 16;
             this.yearOneFallListBox.Location = new System.Drawing.Point(27, 47);

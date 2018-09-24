@@ -12,7 +12,7 @@ namespace DevilsConsilium
 {
     public partial class PlannerPage : Form
     {
-        List<Courses> courseList;
+        static List<Courses> courseList;
         List<Courses> searchResultList;
 
         public PlannerPage()
@@ -23,24 +23,24 @@ namespace DevilsConsilium
             courseList = courseCreator.InitiateList();
             searchResultListBox.DisplayMember = "CourseNumber";
 
-            searchResultList = new List<Courses>();
-            //for (int i = 0; i < courseList.Count; i++)
-            //{
-            //    searchResultListBox.Items.Add(courseList[i]);
-            //}
+            searchResultList = courseCreator.InitiateList();
+
+            for (int i = 0; i < courseList.Count; i++)
+            {
+                searchResultListBox.Items.Add(courseList[i]);
+            }
 
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
             searchResultListBox.Items.Clear();
-
             string searchText = "";
             searchText = searchTextBox.Text;
             searchText = searchText.ToUpper();
-            
+
             //List<Courses> searchResultList;
-            searchResultList = new List<Courses>();
+            searchResultList.Clear();
 
             for (int i = 0; i<courseList.Count;i++)
             {
