@@ -29,7 +29,8 @@ namespace DevilsConsilium
                 "Introduction To Information Systems",
                 "Survey course introducing the competitive and strategic uses of information systems, how information systems are transforming organizations and their management, and the issues, difficulties, and opportunities facing the technology professional and business manager today.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "CIS105" }
                 ));
 
             courseList.Add(new Courses
@@ -38,7 +39,8 @@ namespace DevilsConsilium
                 "Business Information System Development I",
                 "Systems Development Life Cycle (SDLC) tools, techniques, and methodologies used to plan and analyze the needs of modern business information system development.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "CIS235", "ACC241" }
                 ));
 
             courseList.Add(new Courses
@@ -47,7 +49,8 @@ namespace DevilsConsilium
                 "Business Information System Development II",
                 "Provides a clear understanding of the Systems Development Life Cycle (SDLC) tools, techniques, and methodologies used to design, implement, and support modern business information systems development.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "CIS340" }
                 ));
 
             courseList.Add(new Courses
@@ -56,7 +59,8 @@ namespace DevilsConsilium
                 "Business Database Systems Development",
                 "Focuses on business database and data warehousing systems, development and management. Topics include capturing business requirements using data modeling, SQL, data security, operational and analytical data stores and data integrity.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "CIS235" }
                 ));
 
             courseList.Add(new Courses
@@ -65,7 +69,8 @@ namespace DevilsConsilium
                 "Managing Cyber Risks in Enterprise Business Processes",
                 "Covers the activities, decisions, risks and controls associated with enterprise business processes. Specific focus on the activities in the sales-to-cash (revenue cycle) and purchase-to-pay (expenditure cycle) processes. Students understand how IT enables performing those processes more efficiently and effectively. In addition to identifying internal controls necessary for accurate, complete performance of processes, also covers the fundamentals of cybersecurity.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "CIS235" }
                 ));
 
             courseList.Add(new Courses
@@ -74,7 +79,8 @@ namespace DevilsConsilium
                 "Web Technologies for the Enterprise",
                 "Modern Web application technologies for the enterprise. Covers development of Web applications for handling business transactions and strategies including the use of cloud-based applications.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "CIS340", "CIS365" }
                 ));
 
             courseList.Add(new Courses
@@ -83,7 +89,8 @@ namespace DevilsConsilium
                 "Mobile Platforms for Business",
                 "Mobile application development for the enterprise to address mobile transactions and consumer engagement. Covers business frameworks, app development; and management of devices, applications and services in today's multi-platform environment.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "CIS345", "CIS425" }
                 ));
 
             courseList.Add(new Courses
@@ -92,7 +99,8 @@ namespace DevilsConsilium
                 "Capstone in Information Systems",
                 "Offers a capstone experience integrating concepts from the business as well as the technology curricula. Students analyze, propose and develop a full technology solution for a business enterprise.",
                 3,
-                true, false, false, false, false, false, false, false, false, false
+                true, false, false, false, false, false, false, false, false, false,
+                new string[] { "CIS401, CIS425" }
                 ));
 
             courseList.Add(new Courses
@@ -120,7 +128,8 @@ namespace DevilsConsilium
                 "Topics in business analysis, including: Lagrange multipliers, linear programming, linear algebra, " +
                 "intermediate probability, random variables, discrete distributions, and continuous distributions.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "MAT210" }
                 ));
 
             courseList.Add(new Courses
@@ -139,7 +148,8 @@ namespace DevilsConsilium
                 "First-Year Composition",
                 "Critical reading and writing; emphasizes strategies of academic discourse. Research paper required.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "ENG101" }
                 ));
 
             courseList.Add(new Courses
@@ -194,7 +204,8 @@ namespace DevilsConsilium
                 "Business Statistics",
                 "Methods of statistical description. Applies probability theory and statistical inference in business.",
                 3,
-                false, false, true, false, false, false, false, false, false, false
+                false, false, true, false, false, false, false, false, false, false,
+                new string[] { "MAT211" }
                 ));
 
             courseList.Add(new Courses
@@ -213,7 +224,8 @@ namespace DevilsConsilium
                 "Verbal and nonverbal communication in platform speaking. Discussion and practice in vocal and physical delivery and in purposeful " +
                 "organization and development of public communication.",
                 3,
-                true, false, false, false, false, false, false, false, false, false
+                true, false, false, false, false, false, false, false, false, false,
+                new string[] { "ENG101" }
                 ));
 
             courseList.Add(new Courses
@@ -241,7 +253,8 @@ namespace DevilsConsilium
                 "Introduction to Communication Inquiry",
                 "Bases of inquiry into human communication, including introduction to notions of theory, philosophy, problems, and approaches to the study of communication.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "COM100" }
                 ));
 
             courseList.Add(new Courses
@@ -250,7 +263,8 @@ namespace DevilsConsilium
                 "Uses of Accounting Information I",
                 "Introduces the uses of accounting information focusing on the evolution of the business cycle and how accounting information is used for internal and external purposes.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "CIS105" }
                 ));
 
             courseList.Add(new Courses
@@ -259,7 +273,8 @@ namespace DevilsConsilium
                 "Uses of Accounting Information II",
                 "Introduces the uses of accounting information focusing on the evolution of the business cycle and how accounting information is used for internal and external purposes. ",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "ACC231" }
                 ));
 
             courseList.Add(new Courses
@@ -291,7 +306,7 @@ namespace DevilsConsilium
 
             Courses afr210 = new Courses
                (
-                "AFT210",
+                "AFR210",
                 "Introduction to African American Studies",
                 "Examines the political, historical, and cultural origins of African American studies as an academic discipline.",
                 3,
@@ -304,7 +319,8 @@ namespace DevilsConsilium
                 "American Ethnic Literature",
                 "Examines America's multiethnic identity through works of literature that depict American ethnic, gender, and class sensibilities.",
                 3,
-                false, false, false, true, false, false, false, true, false, false
+                false, false, false, true, false, false, false, true, false, false,
+                new string[] { "ENG102" }
                 ));
 
             courseList.Add(new Courses
@@ -313,7 +329,8 @@ namespace DevilsConsilium
                 "Global Supply Operations",
                 "Explores modern global integrated supply chain management. Covers traditional supply chain topics such as procurement, inventory management, operations, quality management, logistics and transportation. Also discusses issues related to sustainability, humanitarian logistics, ethical business practices and supply chain analytics in the context of evolving supply chains around the world. Students discover how business processes, performance metrics and modern supply chain IT tools aid in the management and growth of effective and efficient supply chains.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "ACC231", "CIS105", "MAT211", "ECN221" }
                 ));
 
             courseList.Add(new Courses
@@ -322,7 +339,8 @@ namespace DevilsConsilium
                 "Marketing and Business Performance",
                 "The dynamic role of marketing within society and organizations. Emphasizes frameworks and analytical tools that ensure customer focus and drive organizational performance.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "ECN211", "ECN212" }
                 ));
 
             courseList.Add(new Courses
@@ -331,7 +349,8 @@ namespace DevilsConsilium
                 "Business Writing",
                 "Advanced interdisciplinary writing course designed to improve the workplace writing competence of W. P. Carey School of Business professional and preprofessional students. Lecture, discussion, case studies, cooperative learning, interactive, Internet, student presentations. ",
                 3,
-                true, false, false, false, false, false, false, false, false, false
+                true, false, false, false, false, false, false, false, false, false,
+                new string[] { "ENG102" }
                 ));
 
             courseList.Add(new Courses
@@ -349,7 +368,8 @@ namespace DevilsConsilium
                 "Survey of International Economics",
                 "Surveys international trade issues, commercial policy, trade theory, customs unions, and international monetary topics.",
                 3,
-                false, false, false, false, true, false, false, false, true, false
+                false, false, false, false, true, false, false, false, true, false,
+                new string[] { "ECN211", "ECN212", "MAT211" }
                 ));
 
             courseList.Add(new Courses
@@ -358,7 +378,8 @@ namespace DevilsConsilium
                 "Principles of International Business",
                 "Multidisciplinary analysis of international economic and financial environment. Operations of multinational firms and their interaction with home and host societies.",
                 3,
-                false, false, false, false, false, false, false, false, true, false
+                false, false, false, false, false, false, false, false, true, false,
+                new string[] { "ECN211", "ECN212" }
                 ));
 
             courseList.Add(new Courses
@@ -367,7 +388,8 @@ namespace DevilsConsilium
                 "Global Marketing Management",
                 "Analyzes marketing strategies and practices developed by firms to compete in global markets and adapt to changing international environments.",
                 3,
-                false, false, false, false, false, false, false, false, true, false
+                false, false, false, false, false, false, false, false, true, false,
+                new string[] { "MKT300" }
                 ));
 
             courseList.Add(new Courses
@@ -376,7 +398,8 @@ namespace DevilsConsilium
                 "Global Supply Chain Management",
                 "With increased globalization and offshore sourcing, global supply chain management is becoming an important issue for many businesses. Like traditional supply chain management, the underlying factors behind the trend are reducing the costs of procurement and decreasing the risks related to purchasing activities. The big difference is that global supply chain management involves a company's worldwide interests and suppliers rather than simply a local or national orientation. Enables students to appreciate the challenges of operating supply chains across international boundaries including how to manage various salient issues including sociocultural, economic, technological and political factors that may shape decisions relating to sourcing and moving goods and services across different geographical boundaries.",
                 3,
-                false, false, false, false, false, false, false, false, true, false
+                false, false, false, false, false, false, false, false, true, false,
+                new string[] { "SCM300" }
                 ));
 
             courseList.Add(new Courses
@@ -385,7 +408,8 @@ namespace DevilsConsilium
                 "Fundamentals of Finance",
                 "Theory and problems in financial management of business enterprises.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "ACC231", "ECN212", "ECN221", "MAT211" }
                 ));
 
             courseList.Add(new Courses
@@ -394,7 +418,8 @@ namespace DevilsConsilium
                 "Organization and Management Leadership",
                 "Analyzes strategic, behavioral, and human resource management perspectives, including principles of strategic management and leadership of human resources.",
                 3,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "ACC231", "ECN221", "MAT211" }
                 ));
 
             courseList.Add(new Courses
@@ -412,7 +437,8 @@ namespace DevilsConsilium
                 "W.P. Carey Capstone Course",
                 "Develops a general manager's or business owner's perspective on how organizations can create value. Creating long-run value by repeatedly producing goods and services that customers will buy at prices that cover the costs of producing them is the key to success for business organizations. Analyzing current and future environments to understand threats and opportunities in various institutional settings around the world is the starting point for thinking about how an organization might create value and gain sustainable competitive advantage. Evaluates the impact of institutional settings in different countries and ethical values on decision making. Students learn how to successfully manage relations with key stakeholders including customers, employees, suppliers of capital as well as other component goods and services, and stakeholders from various levels of government in different countries.",
                 3,
-                true, false, false, false, false, false, false, false, false, false
+                true, false, false, false, false, false, false, false, false, false,
+                new string[] { "FIN300", "LES305", "MGT300", "SCM300" }
                 ));
 
             courseList.Add(new Courses
@@ -430,7 +456,8 @@ namespace DevilsConsilium
                 "Sophomore Career Preparation",
                 "Research methods and strategic thinking for finding internships.",
                 0.25,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "WPC148" }
                 ));
 
             courseList.Add(new Courses
@@ -439,7 +466,8 @@ namespace DevilsConsilium
                 "Junior Career Preparation",
                 "Career relationship-building techniques and full-time, job-readiness skills.",
                 0.25,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "WPC248" }
                 ));
 
             courseList.Add(new Courses
@@ -448,7 +476,8 @@ namespace DevilsConsilium
                 "Intensive Career Preparation",
                 "Intensive application of the job search cycle and processes for students still seeking post-graduation employment.",
                 0.25,
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false,
+                new string[] { "WPC348" }
                 ));
 
             return courseList;

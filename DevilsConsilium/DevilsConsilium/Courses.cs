@@ -14,6 +14,7 @@ namespace DevilsConsilium
         string courseDescription;
         double numOfCredits;
         bool l, mA, cS, hU, sB, sQ, sG, c, g, h;
+        string[] preRecs = new string[4];
 
         public Courses()
         {
@@ -35,6 +36,25 @@ namespace DevilsConsilium
             this.c = c;
             this.g = g;
             this.h = h;
+        }
+
+        public Courses(string courseNumber, string courseName, string courseDescription, double numOfCredits, bool l, bool mA, bool cS, bool hU, bool sB, bool sQ, bool sG, bool c, bool g, bool h, string[] preRecs)
+        {
+            this.courseNumber = courseNumber;
+            this.courseName = courseName;
+            this.courseDescription = courseDescription;
+            this.numOfCredits = numOfCredits;
+            this.l = l;
+            this.mA = mA;
+            this.cS = cS;
+            this.hU = hU;
+            this.sB = sB;
+            this.sQ = sQ;
+            this.sG = sG;
+            this.c = c;
+            this.g = g;
+            this.h = h;
+            this.preRecs = preRecs;
         }
 
         public string CourseNumber { get => courseNumber; set => courseNumber = value; }
