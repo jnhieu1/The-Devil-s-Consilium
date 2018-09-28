@@ -21,8 +21,12 @@ namespace DevilsConsilium
         List<Courses>[] plannerList;
         //Item for using in drag drop
         Courses item = null;
-
         int selectedIndex = 0;
+
+        Courses sItem = null;
+        int sSelectedIndex = 0;
+        ListBox sListBox;
+        int sListBoxIndex = 0;
 
 
         public PlannerPage()
@@ -41,6 +45,17 @@ namespace DevilsConsilium
 
             searchResultListBox.DisplayMember = "CourseNumber";
             yearOneFallListBox.DisplayMember = "CourseNumber";
+            yearOneSpringListBox.DisplayMember = "CourseNumber";
+            yearOneSummerListBox.DisplayMember = "CourseNumber";
+            yearTwoFallListBox.DisplayMember = "CourseNumber";
+            yearTwoSpringListBox.DisplayMember = "CourseNumber";
+            yearTwoSummerListBox.DisplayMember = "CourseNumber";
+            yearThreeFallListBox.DisplayMember = "CourseNumber";
+            yearThreeSpringListBox.DisplayMember = "CourseNumber";
+            yearThreeSummerListBox.DisplayMember = "CourseNumber";
+            yearFourFallListBox.DisplayMember = "CourseNumber";
+            yearFourSpringListBox.DisplayMember = "CourseNumber";
+            yearFourSummerListBox.DisplayMember = "CourseNumber";
 
             searchResultList = courseCreator.InitiateList();
 
@@ -106,6 +121,7 @@ namespace DevilsConsilium
         private void searchResultListBox_MouseDown(object sender, MouseEventArgs e)
         {
             item = null;
+
             courseInfoLabel.Text = "";
 
             courseInfoLabel.Text += "Number: " + searchResultList[searchResultListBox.SelectedIndex].CourseNumber;
@@ -121,7 +137,7 @@ namespace DevilsConsilium
             }
 
             courseInfoLabel.Text += "\n\nCredits: " + Convert.ToString(searchResultList[searchResultListBox.SelectedIndex].NumOfCredits);
-            courseInfoLabel.Text += "\nGS: ";
+            courseInfoLabel.Text += "\nGS:";
 
             if (searchResultList[searchResultListBox.SelectedIndex].L == true)
             {
@@ -170,10 +186,27 @@ namespace DevilsConsilium
 
             item = (Courses)searchResultListBox.SelectedItem;
             selectedIndex = searchResultListBox.SelectedIndex;
-            yearOneFallListBox.DoDragDrop(searchResultListBox.SelectedItem.ToString(), DragDropEffects.Copy);
-            
+
+
+            //yearOneFallListBox.DoDragDrop(searchResultListBox.SelectedItem.ToString(), DragDropEffects.Copy);
+            searchResultListBox.DoDragDrop(searchResultListBox.SelectedItem.ToString(), DragDropEffects.Copy);
+
         }
 
+        private void semesterListBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            sItem = null;
+
+            var listBox = sender as ListBox;
+            sItem = (Courses)listBox.SelectedItem;
+            sSelectedIndex = listBox.SelectedIndex;
+            //MessageBox.Show(Convert.ToString(sSelectedIndex));
+
+            sListBox = listBox;
+            sListBoxIndex = listBox.TabIndex;
+
+            listBox.DoDragDrop(listBox.SelectedItem.ToString(), DragDropEffects.Copy);
+        }
         
 
         private void yearOneFallListBox_DragEnter(object sender, DragEventArgs e)
@@ -194,9 +227,10 @@ namespace DevilsConsilium
             //item is a Course object stored when the mousebutton is pressed down in the searchResultListbox
             if (item != null)
             {
-                yearOneFallListBox.Items.Add(item);
-
-                plannerList[0].Add(item);
+                var listBox = sender as ListBox;
+                listBox.Items.Add(item);
+                
+                plannerList[listBox.TabIndex].Add(item);
 
                 searchResultListBox.Items.Remove(item);
                 searchResultList.RemoveAt(selectedIndex);
@@ -206,24 +240,7 @@ namespace DevilsConsilium
             }
         }
 
-        //private void PopulateDetails(Courses course)
-        //{
-        //    courseInformationListBox.Items.Clear();
-        //    courseInformationListBox.Items.Add(course.CourseNumber);
-        //    courseInformationListBox.Items.Add(course.CourseName);
-        //    courseInformationListBox.Items.Add(course.CourseDescription);
-        //    courseInformationListBox.Items.Add(course.NumOfCredits);
-        //    courseInformationListBox.Items.Add("L: " + course.L);
-        //    courseInformationListBox.Items.Add("MA: " + course.MA);
-        //    courseInformationListBox.Items.Add("CS: " + course.CS);
-        //    courseInformationListBox.Items.Add("HU: " + course.HU);
-        //    courseInformationListBox.Items.Add("SB: " + course.SB);
-        //    courseInformationListBox.Items.Add("SQ: " + course.SQ);
-        //    courseInformationListBox.Items.Add("SG: " + course.SG);
-        //    courseInformationListBox.Items.Add("C: " + course.C);
-        //    courseInformationListBox.Items.Add("G: " + course.G);
-        //    courseInformationListBox.Items.Add("H: " + course.H);
-        //}
+
 
         //Method to search through plannerList, listAdded to represents current semster and courseToAdd is copy of course we want to add.
         private bool CanAddToCurrentSemester(int listAddedTo, Courses courseToAdd)
@@ -264,6 +281,32 @@ namespace DevilsConsilium
             else
             {
                 return true;
+            }
+        }
+
+        private void searchResultListBox_DragDrop(object sender, DragEventArgs e)
+        {
+            if (sItem != null)
+            {
+                var listBox = sender as ListBox;
+                searchResultListBox.Items.Add(sItem);
+
+                //plannerList[listBox.TabIndex].Add(item);
+                searchResultList.Add(sItem);
+
+
+                //searchResultListBox.Items.Remove(item);
+                //searchResultList.RemoveAt(selectedIndex);
+                
+                sListBox.Items.Remove(sItem);
+
+                
+                plannerList[sListBoxIndex].RemoveAt(sSelectedIndex);
+
+                sItem = null;
+                sSelectedIndex = 0;
+                sListBox = null;
+                sListBoxIndex = 0;
             }
         }
     }

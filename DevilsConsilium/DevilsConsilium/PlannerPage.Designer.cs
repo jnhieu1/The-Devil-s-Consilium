@@ -136,6 +136,8 @@
             this.searchResultListBox.Name = "searchResultListBox";
             this.searchResultListBox.Size = new System.Drawing.Size(115, 220);
             this.searchResultListBox.TabIndex = 3;
+            this.searchResultListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.searchResultListBox_DragDrop);
+            this.searchResultListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             this.searchResultListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchResultListBox_MouseDown);
             // 
             // searchButton
@@ -182,12 +184,15 @@
             // 
             // yearOneSummerListBox
             // 
+            this.yearOneSummerListBox.AllowDrop = true;
             this.yearOneSummerListBox.FormattingEnabled = true;
             this.yearOneSummerListBox.ItemHeight = 12;
             this.yearOneSummerListBox.Location = new System.Drawing.Point(490, 35);
             this.yearOneSummerListBox.Name = "yearOneSummerListBox";
             this.yearOneSummerListBox.Size = new System.Drawing.Size(219, 100);
-            this.yearOneSummerListBox.TabIndex = 5;
+            this.yearOneSummerListBox.TabIndex = 2;
+            this.yearOneSummerListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearOneSummerListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // yearOneSpring
             // 
@@ -209,12 +214,15 @@
             // 
             // yearOneSpringListBox
             // 
+            this.yearOneSpringListBox.AllowDrop = true;
             this.yearOneSpringListBox.FormattingEnabled = true;
             this.yearOneSpringListBox.ItemHeight = 12;
             this.yearOneSpringListBox.Location = new System.Drawing.Point(255, 35);
             this.yearOneSpringListBox.Name = "yearOneSpringListBox";
             this.yearOneSpringListBox.Size = new System.Drawing.Size(219, 100);
             this.yearOneSpringListBox.TabIndex = 1;
+            this.yearOneSpringListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearOneSpringListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // yearOneFallListBox
             // 
@@ -227,6 +235,7 @@
             this.yearOneFallListBox.TabIndex = 0;
             this.yearOneFallListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
             this.yearOneFallListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
+            this.yearOneFallListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.semesterListBox_MouseDown);
             // 
             // year2GroupBox
             // 
@@ -254,12 +263,15 @@
             // 
             // yearTwoSummerListBox
             // 
+            this.yearTwoSummerListBox.AllowDrop = true;
             this.yearTwoSummerListBox.FormattingEnabled = true;
             this.yearTwoSummerListBox.ItemHeight = 12;
             this.yearTwoSummerListBox.Location = new System.Drawing.Point(490, 35);
             this.yearTwoSummerListBox.Name = "yearTwoSummerListBox";
             this.yearTwoSummerListBox.Size = new System.Drawing.Size(219, 100);
-            this.yearTwoSummerListBox.TabIndex = 7;
+            this.yearTwoSummerListBox.TabIndex = 5;
+            this.yearTwoSummerListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearTwoSummerListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // yearTwoSpringLable
             // 
@@ -281,21 +293,27 @@
             // 
             // yearTwoSpringListBox
             // 
+            this.yearTwoSpringListBox.AllowDrop = true;
             this.yearTwoSpringListBox.FormattingEnabled = true;
             this.yearTwoSpringListBox.ItemHeight = 12;
             this.yearTwoSpringListBox.Location = new System.Drawing.Point(255, 35);
             this.yearTwoSpringListBox.Name = "yearTwoSpringListBox";
             this.yearTwoSpringListBox.Size = new System.Drawing.Size(219, 100);
-            this.yearTwoSpringListBox.TabIndex = 3;
+            this.yearTwoSpringListBox.TabIndex = 4;
+            this.yearTwoSpringListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearTwoSpringListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // yearTwoFallListBox
             // 
+            this.yearTwoFallListBox.AllowDrop = true;
             this.yearTwoFallListBox.FormattingEnabled = true;
             this.yearTwoFallListBox.ItemHeight = 12;
             this.yearTwoFallListBox.Location = new System.Drawing.Point(20, 35);
             this.yearTwoFallListBox.Name = "yearTwoFallListBox";
             this.yearTwoFallListBox.Size = new System.Drawing.Size(219, 100);
-            this.yearTwoFallListBox.TabIndex = 2;
+            this.yearTwoFallListBox.TabIndex = 3;
+            this.yearTwoFallListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearTwoFallListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // year3GroupBox
             // 
@@ -332,12 +350,15 @@
             // 
             // yearThreeSummerListBox
             // 
+            this.yearThreeSummerListBox.AllowDrop = true;
             this.yearThreeSummerListBox.FormattingEnabled = true;
             this.yearThreeSummerListBox.ItemHeight = 12;
             this.yearThreeSummerListBox.Location = new System.Drawing.Point(490, 35);
             this.yearThreeSummerListBox.Name = "yearThreeSummerListBox";
             this.yearThreeSummerListBox.Size = new System.Drawing.Size(219, 100);
-            this.yearThreeSummerListBox.TabIndex = 6;
+            this.yearThreeSummerListBox.TabIndex = 8;
+            this.yearThreeSummerListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearThreeSummerListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // yearThreeFallLable
             // 
@@ -350,21 +371,27 @@
             // 
             // yearThreeSpringListBox
             // 
+            this.yearThreeSpringListBox.AllowDrop = true;
             this.yearThreeSpringListBox.FormattingEnabled = true;
             this.yearThreeSpringListBox.ItemHeight = 12;
             this.yearThreeSpringListBox.Location = new System.Drawing.Point(255, 35);
             this.yearThreeSpringListBox.Name = "yearThreeSpringListBox";
             this.yearThreeSpringListBox.Size = new System.Drawing.Size(219, 100);
-            this.yearThreeSpringListBox.TabIndex = 5;
+            this.yearThreeSpringListBox.TabIndex = 7;
+            this.yearThreeSpringListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearThreeSpringListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // yearThreeFallListBox
             // 
+            this.yearThreeFallListBox.AllowDrop = true;
             this.yearThreeFallListBox.FormattingEnabled = true;
             this.yearThreeFallListBox.ItemHeight = 12;
             this.yearThreeFallListBox.Location = new System.Drawing.Point(20, 35);
             this.yearThreeFallListBox.Name = "yearThreeFallListBox";
             this.yearThreeFallListBox.Size = new System.Drawing.Size(219, 100);
-            this.yearThreeFallListBox.TabIndex = 4;
+            this.yearThreeFallListBox.TabIndex = 6;
+            this.yearThreeFallListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearThreeFallListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // year4GroupBox
             // 
@@ -409,30 +436,39 @@
             // 
             // yearFourSpringListBox
             // 
+            this.yearFourSpringListBox.AllowDrop = true;
             this.yearFourSpringListBox.FormattingEnabled = true;
             this.yearFourSpringListBox.ItemHeight = 12;
             this.yearFourSpringListBox.Location = new System.Drawing.Point(255, 35);
             this.yearFourSpringListBox.Name = "yearFourSpringListBox";
             this.yearFourSpringListBox.Size = new System.Drawing.Size(219, 100);
-            this.yearFourSpringListBox.TabIndex = 7;
+            this.yearFourSpringListBox.TabIndex = 10;
+            this.yearFourSpringListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearFourSpringListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // yearFourFallListBox
             // 
+            this.yearFourFallListBox.AllowDrop = true;
             this.yearFourFallListBox.FormattingEnabled = true;
             this.yearFourFallListBox.ItemHeight = 12;
             this.yearFourFallListBox.Location = new System.Drawing.Point(20, 35);
             this.yearFourFallListBox.Name = "yearFourFallListBox";
             this.yearFourFallListBox.Size = new System.Drawing.Size(219, 100);
-            this.yearFourFallListBox.TabIndex = 6;
+            this.yearFourFallListBox.TabIndex = 9;
+            this.yearFourFallListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearFourFallListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // yearFourSummerListBox
             // 
+            this.yearFourSummerListBox.AllowDrop = true;
             this.yearFourSummerListBox.FormattingEnabled = true;
             this.yearFourSummerListBox.ItemHeight = 12;
             this.yearFourSummerListBox.Location = new System.Drawing.Point(664, 498);
             this.yearFourSummerListBox.Name = "yearFourSummerListBox";
             this.yearFourSummerListBox.Size = new System.Drawing.Size(219, 100);
-            this.yearFourSummerListBox.TabIndex = 7;
+            this.yearFourSummerListBox.TabIndex = 11;
+            this.yearFourSummerListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearFourSummerListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // label1
             // 
