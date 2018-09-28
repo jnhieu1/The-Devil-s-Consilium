@@ -112,7 +112,7 @@
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(75, 26);
             // 
             // courseGroupBox
             // 
@@ -130,6 +130,7 @@
             // 
             // searchResultListBox
             // 
+            this.searchResultListBox.AllowDrop = true;
             this.searchResultListBox.FormattingEnabled = true;
             this.searchResultListBox.ItemHeight = 16;
             this.searchResultListBox.Location = new System.Drawing.Point(8, 89);
@@ -137,7 +138,7 @@
             this.searchResultListBox.Name = "searchResultListBox";
             this.searchResultListBox.Size = new System.Drawing.Size(152, 292);
             this.searchResultListBox.TabIndex = 3;
-            this.searchResultListBox.SelectedIndexChanged += new System.EventHandler(this.searchResultListBox_SelectedIndexChanged);
+            this.searchResultListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchResultListBox_MouseDown);
             // 
             // searchButton
             // 
@@ -236,6 +237,8 @@
             this.yearOneFallListBox.Name = "yearOneFallListBox";
             this.yearOneFallListBox.Size = new System.Drawing.Size(291, 132);
             this.yearOneFallListBox.TabIndex = 0;
+            this.yearOneFallListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragDrop);
+            this.yearOneFallListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.yearOneFallListBox_DragEnter);
             // 
             // year2GroupBox
             // 

@@ -71,5 +71,6 @@ namespace DevilsConsilium
         public bool C { get => c; set => c = value; }
         public bool G { get => g; set => g = value; }
         public bool H { get => h; set => h = value; }
+        public string[] PreRecs { get => preRecs; }
     }
 }
