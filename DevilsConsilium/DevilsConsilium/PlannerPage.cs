@@ -22,6 +22,8 @@ namespace DevilsConsilium
         //Item for using in drag drop
         Courses item = null;
 
+        int selectedIndex = 0;
+
 
         public PlannerPage()
         {
@@ -121,7 +123,9 @@ namespace DevilsConsilium
             courseInformationListBox.Items.Add("H: " + searchResultList[searchResultListBox.SelectedIndex].H);
 
             item = (Courses)searchResultListBox.SelectedItem;
+            selectedIndex = searchResultListBox.SelectedIndex;
             yearOneFallListBox.DoDragDrop(searchResultListBox.SelectedItem.ToString(), DragDropEffects.Copy);
+            
         }
 
         private void yearOneFallListBox_DragEnter(object sender, DragEventArgs e)
@@ -147,7 +151,10 @@ namespace DevilsConsilium
                 plannerList[0].Add(item);
 
                 searchResultListBox.Items.Remove(item);
+                searchResultList.RemoveAt(selectedIndex);
+                
                 item = null;
+                selectedIndex = 0;
             }
         }
 
