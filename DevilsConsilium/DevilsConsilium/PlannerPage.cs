@@ -28,7 +28,7 @@ namespace DevilsConsilium
         public PlannerPage()
         {
             InitializeComponent();
-
+            
             //Initializing Courses, courselist and planner list
             CourseCreator courseCreator = new CourseCreator();
             courseList = courseCreator.InitiateList();
@@ -106,27 +106,75 @@ namespace DevilsConsilium
         private void searchResultListBox_MouseDown(object sender, MouseEventArgs e)
         {
             item = null;
-            courseInformationListBox.Items.Clear();
-            courseInformationListBox.Items.Add(searchResultList[searchResultListBox.SelectedIndex].CourseNumber);
-            courseInformationListBox.Items.Add(searchResultList[searchResultListBox.SelectedIndex].CourseName);
-            courseInformationListBox.Items.Add(searchResultList[searchResultListBox.SelectedIndex].CourseDescription);
-            courseInformationListBox.Items.Add(searchResultList[searchResultListBox.SelectedIndex].NumOfCredits);
-            courseInformationListBox.Items.Add("L: " + searchResultList[searchResultListBox.SelectedIndex].L);
-            courseInformationListBox.Items.Add("MA: " + searchResultList[searchResultListBox.SelectedIndex].MA);
-            courseInformationListBox.Items.Add("CS: " + searchResultList[searchResultListBox.SelectedIndex].CS);
-            courseInformationListBox.Items.Add("HU: " + searchResultList[searchResultListBox.SelectedIndex].HU);
-            courseInformationListBox.Items.Add("SB: " + searchResultList[searchResultListBox.SelectedIndex].SB);
-            courseInformationListBox.Items.Add("SQ: " + searchResultList[searchResultListBox.SelectedIndex].SQ);
-            courseInformationListBox.Items.Add("SG: " + searchResultList[searchResultListBox.SelectedIndex].SG);
-            courseInformationListBox.Items.Add("C: " + searchResultList[searchResultListBox.SelectedIndex].C);
-            courseInformationListBox.Items.Add("G: " + searchResultList[searchResultListBox.SelectedIndex].G);
-            courseInformationListBox.Items.Add("H: " + searchResultList[searchResultListBox.SelectedIndex].H);
+            courseInfoLabel.Text = "";
+
+            courseInfoLabel.Text += "Number: " + searchResultList[searchResultListBox.SelectedIndex].CourseNumber;
+            courseInfoLabel.Text += "\n\nName: " + searchResultList[searchResultListBox.SelectedIndex].CourseName;
+
+            if (searchResultList[searchResultListBox.SelectedIndex].CourseDescription.Length >= 235)
+            {
+                courseInfoLabel.Text += "\n\nDescription: " + searchResultList[searchResultListBox.SelectedIndex].CourseDescription.Substring(0,235) + "...";
+            }
+            else
+            {
+                courseInfoLabel.Text += "\n\nDescription: " + searchResultList[searchResultListBox.SelectedIndex].CourseDescription;
+            }
+
+            courseInfoLabel.Text += "\n\nCredits: " + Convert.ToString(searchResultList[searchResultListBox.SelectedIndex].NumOfCredits);
+            courseInfoLabel.Text += "\nGS: ";
+
+            if (searchResultList[searchResultListBox.SelectedIndex].L == true)
+            {
+                courseInfoLabel.Text += " " + "L";
+            }
+            else if (searchResultList[searchResultListBox.SelectedIndex].MA == true)
+            {
+                courseInfoLabel.Text += " " + "MA";
+            }
+            else if (searchResultList[searchResultListBox.SelectedIndex].CS == true)
+            {
+                courseInfoLabel.Text += " " + "CS";
+            }
+            else if (searchResultList[searchResultListBox.SelectedIndex].HU == true)
+            {
+                courseInfoLabel.Text += " " + "HU";
+            }
+            else if (searchResultList[searchResultListBox.SelectedIndex].SB == true)
+            {
+                courseInfoLabel.Text += " " + "SB";
+            }
+            else if (searchResultList[searchResultListBox.SelectedIndex].SQ == true)
+            {
+                courseInfoLabel.Text += " " + "SQ";
+            }
+            else if (searchResultList[searchResultListBox.SelectedIndex].SG == true)
+            {
+                courseInfoLabel.Text += " " + "SG";
+            }
+            else if (searchResultList[searchResultListBox.SelectedIndex].C == true)
+            {
+                courseInfoLabel.Text += " " + "C";
+            }
+            else if (searchResultList[searchResultListBox.SelectedIndex].G == true)
+            {
+                courseInfoLabel.Text += " " + "G";
+            }
+            else if (searchResultList[searchResultListBox.SelectedIndex].MA == true)
+            {
+                courseInfoLabel.Text += " " + "H";
+            }
+            else
+            {
+                courseInfoLabel.Text += " " + "None";
+            }
 
             item = (Courses)searchResultListBox.SelectedItem;
             selectedIndex = searchResultListBox.SelectedIndex;
             yearOneFallListBox.DoDragDrop(searchResultListBox.SelectedItem.ToString(), DragDropEffects.Copy);
             
         }
+
+        
 
         private void yearOneFallListBox_DragEnter(object sender, DragEventArgs e)
         {
