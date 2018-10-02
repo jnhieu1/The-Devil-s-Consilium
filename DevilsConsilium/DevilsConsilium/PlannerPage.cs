@@ -142,50 +142,96 @@ namespace DevilsConsilium
             courseInfoLabel.Text += "\n\nCredits: " + Convert.ToString(searchResultList[searchResultListBox.SelectedIndex].NumOfCredits);
             courseInfoLabel.Text += "\nGS:";
 
+            int counter = 0;
+
             if (searchResultList[searchResultListBox.SelectedIndex].L == true)
             {
                 courseInfoLabel.Text += " " + "L";
+                counter++;
             }
-            else if (searchResultList[searchResultListBox.SelectedIndex].MA == true)
+            if (searchResultList[searchResultListBox.SelectedIndex].MA == true)
             {
+                if (counter >= 1)
+                    courseInfoLabel.Text += " &&";
                 courseInfoLabel.Text += " " + "MA";
+                counter++;
             }
-            else if (searchResultList[searchResultListBox.SelectedIndex].CS == true)
+            if (searchResultList[searchResultListBox.SelectedIndex].CS == true)
             {
+                if (counter >= 1)
+                    courseInfoLabel.Text += " &&";
                 courseInfoLabel.Text += " " + "CS";
+                counter++;
             }
-            else if (searchResultList[searchResultListBox.SelectedIndex].HU == true)
+            if (searchResultList[searchResultListBox.SelectedIndex].HU == true)
             {
+                if (counter >= 1)
+                    courseInfoLabel.Text += " &&";
                 courseInfoLabel.Text += " " + "HU";
+                counter++;
             }
-            else if (searchResultList[searchResultListBox.SelectedIndex].SB == true)
+            if (searchResultList[searchResultListBox.SelectedIndex].SB == true)
             {
+                if (counter >= 1)
+                    courseInfoLabel.Text += " &&";
                 courseInfoLabel.Text += " " + "SB";
+                counter++;
             }
-            else if (searchResultList[searchResultListBox.SelectedIndex].SQ == true)
+            if (searchResultList[searchResultListBox.SelectedIndex].SQ == true)
             {
+                if (counter >= 1)
+                    courseInfoLabel.Text += " &&";
                 courseInfoLabel.Text += " " + "SQ";
+                counter++;
             }
-            else if (searchResultList[searchResultListBox.SelectedIndex].SG == true)
+            if (searchResultList[searchResultListBox.SelectedIndex].SG == true)
             {
+                if (counter >= 1)
+                    courseInfoLabel.Text += " &&";
                 courseInfoLabel.Text += " " + "SG";
+                counter++;
             }
-            else if (searchResultList[searchResultListBox.SelectedIndex].C == true)
+            if (searchResultList[searchResultListBox.SelectedIndex].C == true)
             {
+                if (counter >= 1)
+                    courseInfoLabel.Text += " &&";
                 courseInfoLabel.Text += " " + "C";
+                counter++;
             }
-            else if (searchResultList[searchResultListBox.SelectedIndex].G == true)
+            if (searchResultList[searchResultListBox.SelectedIndex].G == true)
             {
+                if (counter >= 1)
+                    courseInfoLabel.Text += " &&";
                 courseInfoLabel.Text += " " + "G";
+                counter++;
             }
-            else if (searchResultList[searchResultListBox.SelectedIndex].MA == true)
+            if (searchResultList[searchResultListBox.SelectedIndex].MA == true)
             {
+                if (counter >= 1)
+                    courseInfoLabel.Text += " &&";
                 courseInfoLabel.Text += " " + "H";
+                counter++;
             }
-            else
+            if (counter == 0)
             {
                 courseInfoLabel.Text += " " + "None";
             }
+
+            courseInfoLabel.Text += "\nPre-requisite(s): ";
+
+            if (searchResultList[searchResultListBox.SelectedIndex].PreRecs != null)
+            {
+                counter = 0;
+                foreach (string s in searchResultList[searchResultListBox.SelectedIndex].PreRecs)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += ", ";
+                    courseInfoLabel.Text += s;
+                    counter++;
+                }
+            }
+            else
+                courseInfoLabel.Text += "None";
 
             item = (Courses)searchResultListBox.SelectedItem;
             selectedIndex = searchResultListBox.SelectedIndex;

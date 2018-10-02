@@ -17,7 +17,7 @@ namespace DevilsConsilium
         string courseDescription;
         double numOfCredits;
         bool l, mA, cS, hU, sB, sQ, sG, c, g, h;
-        string[] preRecs = new string[4];
+        string[] preRecs;
 
         public Courses()
         {

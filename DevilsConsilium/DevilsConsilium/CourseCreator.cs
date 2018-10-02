@@ -100,7 +100,7 @@ namespace DevilsConsilium
                 "Offers a capstone experience integrating concepts from the business as well as the technology curricula. Students analyze, propose and develop a full technology solution for a business enterprise.",
                 3,
                 true, false, false, false, false, false, false, false, false, false,
-                new string[] { "CIS401, CIS425" }
+                new string[] { "CIS401", "CIS425" }
                 ));
 
             courseList.Add(new Courses
@@ -304,14 +304,14 @@ namespace DevilsConsilium
                 false, false, false, false, true, false, false, true, false, false
                 ));
 
-            Courses afr210 = new Courses
+            courseList.Add(new Courses
                (
                 "AFR210",
                 "Introduction to African American Studies",
                 "Examines the political, historical, and cultural origins of African American studies as an academic discipline.",
                 3,
                 false, false, false, false, false, false, false, true, false, false
-               );
+               ));
 
             courseList.Add(new Courses
                 (
