@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace DevilsConsilium
 {
@@ -307,6 +310,131 @@ namespace DevilsConsilium
                 sSelectedIndex = 0;
                 sListBox = null;
                 sListBoxIndex = 0;
+            }
+        }
+
+        //Save button
+        private void saveCourseListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (plannerList != null)
+            {
+                //Try to put our courseList object in the data.bin file.
+                try
+                {
+                    Stream stream = File.Open("data.bin", FileMode.Create);
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, plannerList);
+                    stream.Close();
+                }
+                catch (IOException)
+                {
+
+                }
+            }
+        }
+
+        //Load button function call for homepage
+        public void LoadUpCourseList(List<Courses>[] list)
+        {
+            //Loop through every semester
+            for(int i = 0; i < list.Count(); i++)
+            {
+                //Loop through every course in a semester
+                for(int j = 0; j < list[i].Count(); j++)
+                {
+                    //Insert course into planner
+                    plannerList[i].Add(list[i][j]);
+
+                    //Adding the course to the semester listbox
+                    DisplayAddedCourse(list[i][j], i);
+                }
+            }
+
+            //Fix up searchresultlistbox
+            SearchResultsFix(list);
+        }
+
+        //Course display on load
+        public void DisplayAddedCourse(Courses toAdd, int semester)
+        {
+            switch(semester)
+            {
+                case 0:
+                    yearOneFallListBox.Items.Add(toAdd);
+                    break;
+                case 1:
+                    yearOneSpringListBox.Items.Add(toAdd);
+                    break;
+                case 2:
+                    yearOneSummerListBox.Items.Add(toAdd);
+                    break;
+                case 3:
+                    yearTwoFallListBox.Items.Add(toAdd);
+                    break;
+                case 4:
+                    yearTwoSpringListBox.Items.Add(toAdd);
+                    break;
+                case 5:
+                    yearTwoSummerListBox.Items.Add(toAdd);
+                    break;
+                case 6:
+                    yearThreeFallListBox.Items.Add(toAdd);
+                    break;
+                case 7:
+                    yearThreeSpringListBox.Items.Add(toAdd);
+                    break;
+                case 8:
+                    yearThreeSummerListBox.Items.Add(toAdd);
+                    break;
+                case 9:
+                    yearFourFallListBox.Items.Add(toAdd);
+                    break;
+                case 10:
+                    yearFourSpringListBox.Items.Add(toAdd);
+                    break;
+                case 11:
+                    yearFourSummerListBox.Items.Add(toAdd);
+                    break;
+            }
+        }
+
+        //Method to reorganize searchResultsListBox after load
+        public void SearchResultsFix(List<Courses>[] list)
+        {
+            int semesterNum = 0;
+            //Loop through list of courses we are adding
+            do
+            {
+                int removeLocation = -1;
+
+                //If we find the item from our list parameter, remove it from the searchListBox
+                for (int i = 0; i < searchResultList.Count(); i++)
+                {
+                    if (list[semesterNum].Count() != 0)
+                    {
+                        if (list[semesterNum][0].CourseNumber == searchResultList[i].CourseNumber)
+                        {
+                            removeLocation = i;
+                        }
+                    }
+                }
+
+                //Remove the item at the location from both lists
+                if (removeLocation != -1)
+                {
+                    searchResultList.RemoveAt(removeLocation);
+                    list[semesterNum].RemoveAt(removeLocation);
+                }
+
+                semesterNum++;
+            } while (list.Count() != semesterNum);
+
+            searchResultListBox.Items.Clear();
+
+            //Display the newly corrected list.
+            for (int i = 0; i < searchResultList.Count(); i++)
+            {
+                searchResultListBox.Items.Add(searchResultList[i]);
             }
         }
     }

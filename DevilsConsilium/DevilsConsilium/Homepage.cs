@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace DevilsConsilium
 {
@@ -28,9 +30,20 @@ namespace DevilsConsilium
             page.Show();
         }
 
+        //Loading from data.bin file
         private void openButton_Click(object sender, EventArgs e)
         {
+            Stream stream = File.Open("data.bin", FileMode.Open);
+            BinaryFormatter bin = new BinaryFormatter();
+            //Putting saved courseList into temp variable.
+            List<Courses>[] tmpCourseList = (List<Courses>[])bin.Deserialize(stream);
 
+            //Make a new planner page
+            PlannerPage page = new PlannerPage();
+            page.LoadUpCourseList(tmpCourseList);
+            stream.Close();
+
+            page.Show();
         }
     }
 }
