@@ -75,6 +75,7 @@
             this.Controls.Add(this.newButton);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Homepage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Homepage";
             this.Load += new System.EventHandler(this.Homepage_Load);
             this.ResumeLayout(false);
