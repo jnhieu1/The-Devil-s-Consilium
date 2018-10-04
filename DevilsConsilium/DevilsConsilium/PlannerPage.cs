@@ -82,7 +82,7 @@ namespace DevilsConsilium
 
             for (int i = 0; i<courseList.Count;i++)
             {
-                if(courseList[i].CourseNumber.Contains(searchText))
+                if(courseList[i].CourseNumber.Contains(searchText) && IsInPlanner(courseList[i].CourseNumber))
                 {
                     searchResultList.Add(courseList[i]);
                 }
@@ -247,14 +247,18 @@ namespace DevilsConsilium
             sItem = null;
 
             var listBox = sender as ListBox;
-            sItem = (Courses)listBox.SelectedItem;
-            sSelectedIndex = listBox.SelectedIndex;
-            //MessageBox.Show(Convert.ToString(sSelectedIndex));
 
-            sListBox = listBox;
-            sListBoxIndex = listBox.TabIndex;
+            if (listBox.SelectedItem != null)
+            {
+                sItem = (Courses)listBox.SelectedItem;
+                sSelectedIndex = listBox.SelectedIndex;
+                //MessageBox.Show(Convert.ToString(sSelectedIndex));
 
-            listBox.DoDragDrop(listBox.SelectedItem.ToString(), DragDropEffects.Copy);
+                sListBox = listBox;
+                sListBoxIndex = listBox.TabIndex;
+
+                listBox.DoDragDrop(listBox.SelectedItem.ToString(), DragDropEffects.Copy);
+            }
         }
         
 
@@ -277,15 +281,23 @@ namespace DevilsConsilium
             if (item != null)
             {
                 var listBox = sender as ListBox;
-                listBox.Items.Add(item);
-                
-                plannerList[listBox.TabIndex].Add(item);
 
-                searchResultListBox.Items.Remove(item);
-                searchResultList.RemoveAt(selectedIndex);
-                
-                item = null;
-                selectedIndex = 0;
+                if (CanAddToCurrentSemester(listBox.TabIndex, item))
+                {
+                    listBox.Items.Add(item);
+
+                    plannerList[listBox.TabIndex].Add(item);
+
+                    searchResultListBox.Items.Remove(item);
+                    searchResultList.RemoveAt(selectedIndex);
+
+                    item = null;
+                    selectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Cannot add course to this semester due to pre-rec mismatch.");
+                }
             }
         }
 
@@ -296,41 +308,44 @@ namespace DevilsConsilium
         {
             //Make a list to hold every pre-req string
             List<string> listForPreReqs = new List<string>();
-
-            //Populate pre-req list
-            for(int q = 0; q < courseToAdd.PreRecs.Length; q++)
+            if (courseToAdd.PreRecs != null)
             {
-                listForPreReqs.Add(courseToAdd.PreRecs[q]);
-            }
-
-            //Looping through semester
-            for(int i = 0; i < listAddedTo - 1; i++)
-            {
-                //Looping through Courses in the semester
-                for(int j = 0; j < plannerList[i].Count; j++)
+                //Populate pre-req list
+                for (int q = 0; q < courseToAdd.PreRecs.Length; q++)
                 {
-                    //Loop through the pre-req list 
-                    for(int k = 0; k < listForPreReqs.Count; k++)
+                    listForPreReqs.Add(courseToAdd.PreRecs[q]);
+                }
+
+                //Looping through semester
+                for (int i = 0; i <= listAddedTo - 1; i++)
+                {
+                    //Looping through Courses in the semester
+                    for (int j = 0; j < plannerList[i].Count; j++)
                     {
-                        //Loop through pre-req list to see if a single course is anywhere in the pre-req list
-                        if (plannerList[i][j].CourseNumber == listForPreReqs[k])
+                        //Loop through the pre-req list 
+                        for (int k = 0; k < listForPreReqs.Count; k++)
                         {
-                            //If the pre-req was found, remove it from the pre-req list
-                            listForPreReqs.Remove(plannerList[i][j].CourseNumber);
+                            //Loop through pre-req list to see if a single course is anywhere in the pre-req list
+                            if (plannerList[i][j].CourseNumber == listForPreReqs[k])
+                            {
+                                //If the pre-req was found, remove it from the pre-req list
+                                listForPreReqs.Remove(plannerList[i][j].CourseNumber);
+                            }
                         }
                     }
                 }
+                //If the pre-req list wasn't completely emptied return false
+                if (listForPreReqs.Count > 0)
+                {
+                    return false;
+                }
+                //If the list was emptied completely return true, signalling that the pre-reqs existed in past semesters
+                else
+                {
+                    return true;
+                }
             }
-            //If the pre-req list wasn't completely emptied return false
-            if(listForPreReqs.Count > 0)
-            {
-                return false;
-            }
-            //If the list was emptied completely return true, signalling that the pre-reqs existed in past semesters
-            else
-            {
-                return true;
-            }
+            return true;
         }
 
         private void searchResultListBox_DragDrop(object sender, DragEventArgs e)
@@ -447,41 +462,43 @@ namespace DevilsConsilium
         //Method to reorganize searchResultsListBox after load
         public void SearchResultsFix(List<Courses>[] list)
         {
-            int semesterNum = 0;
-            //Loop through list of courses we are adding
-            do
-            {
-                int removeLocation = -1;
-
-                //If we find the item from our list parameter, remove it from the searchListBox
-                for (int i = 0; i < searchResultList.Count(); i++)
-                {
-                    if (list[semesterNum].Count() != 0)
-                    {
-                        if (list[semesterNum][0].CourseNumber == searchResultList[i].CourseNumber)
-                        {
-                            removeLocation = i;
-                        }
-                    }
-                }
-
-                //Remove the item at the location from both lists
-                if (removeLocation != -1)
-                {
-                    searchResultList.RemoveAt(removeLocation);
-                    list[semesterNum].RemoveAt(removeLocation);
-                }
-
-                semesterNum++;
-            } while (list.Count() != semesterNum);
-
+            //Clear listbox and list
             searchResultListBox.Items.Clear();
+            searchResultList.Clear();
+
+            //Add courses back to search list if the course is not on the planner already.
+            for (int i = 0; i < courseList.Count; i++)
+            {
+                if (IsInPlanner(courseList[i].CourseNumber))
+                {
+                    searchResultList.Add(courseList[i]);
+                }
+            }
 
             //Display the newly corrected list.
             for (int i = 0; i < searchResultList.Count(); i++)
             {
                 searchResultListBox.Items.Add(searchResultList[i]);
             }
+        }
+
+        //Tells if the plannerList has a course in it given courseNum (to be used with searching to not redisplay courses in planner
+        public bool IsInPlanner(string courseNum)
+        {
+            bool add = true;
+
+            for(int i = 0; i < plannerList.Length; i++)
+            {
+                for(int j = 0; j < plannerList[i].Count(); j++)
+                {
+                    if (plannerList[i][j].CourseNumber == courseNum)
+                    {
+                        add = false;
+                    }
+                }
+            }
+
+            return add;
         }
     }
 }
