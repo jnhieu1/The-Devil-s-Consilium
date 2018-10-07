@@ -19,10 +19,7 @@ namespace DevilsConsilium
             InitializeComponent();
         }
 
-        private void Homepage_Load(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void newButton_Click(object sender, EventArgs e)
         {
@@ -45,5 +42,7 @@ namespace DevilsConsilium
 
             page.Show();
         }
+
+     
     }
 }
