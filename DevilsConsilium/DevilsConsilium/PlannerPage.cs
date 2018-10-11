@@ -35,13 +35,13 @@ namespace DevilsConsilium
         public PlannerPage()
         {
             InitializeComponent();
-            
+
             //Initializing Courses, courselist and planner list
             CourseCreator courseCreator = new CourseCreator();
             courseList = courseCreator.InitiateList();
             plannerList = new List<Courses>[12];
 
-            for(int hello = 0; hello < plannerList.Length; hello++)
+            for (int hello = 0; hello < plannerList.Length; hello++)
             {
                 plannerList[hello] = new List<Courses>();
             }
@@ -80,14 +80,14 @@ namespace DevilsConsilium
             //List<Courses> searchResultList;
             searchResultList.Clear();
 
-            for (int i = 0; i<courseList.Count;i++)
+            for (int i = 0; i < courseList.Count; i++)
             {
-                if(courseList[i].CourseNumber.Contains(searchText) && IsInPlanner(courseList[i].CourseNumber))
+                if (courseList[i].CourseNumber.Contains(searchText) && IsInPlanner(courseList[i].CourseNumber))
                 {
                     searchResultList.Add(courseList[i]);
                 }
             }
-            
+
             if (searchResultList.Count == 0)
             {
                 MessageBox.Show("No Results Found");
@@ -132,7 +132,7 @@ namespace DevilsConsilium
 
             if (searchResultList[searchResultListBox.SelectedIndex].CourseDescription.Length >= 235)
             {
-                courseInfoLabel.Text += "\n\nDescription: " + searchResultList[searchResultListBox.SelectedIndex].CourseDescription.Substring(0,235) + "...";
+                courseInfoLabel.Text += "\n\nDescription: " + searchResultList[searchResultListBox.SelectedIndex].CourseDescription.Substring(0, 235) + "...";
             }
             else
             {
@@ -246,21 +246,140 @@ namespace DevilsConsilium
         {
             sItem = null;
 
-            var listBox = sender as ListBox;
+            ListBox listBox = sender as ListBox;
 
-            if (listBox.SelectedItem != null)
+            if (listBox.SelectedIndex >= 0 && listBox.SelectedIndex < listBox.Items.Count)
             {
-                sItem = (Courses)listBox.SelectedItem;
-                sSelectedIndex = listBox.SelectedIndex;
-                //MessageBox.Show(Convert.ToString(sSelectedIndex));
 
-                sListBox = listBox;
-                sListBoxIndex = listBox.TabIndex;
+                courseInfoLabel.Text = "";
 
-                listBox.DoDragDrop(listBox.SelectedItem.ToString(), DragDropEffects.Copy);
+                courseInfoLabel.Text += "Number: " + plannerList[listBox.TabIndex][listBox.SelectedIndex].CourseNumber;
+                courseInfoLabel.Text += "\n\nName: " + plannerList[0][yearOneFallListBox.SelectedIndex].CourseName;
+
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].CourseDescription.Length >= 235)
+                {
+                    courseInfoLabel.Text += "\n\nDescription: " + plannerList[listBox.TabIndex][listBox.SelectedIndex].CourseDescription.Substring(0, 235) + "...";
+                }
+                else
+                {
+                    courseInfoLabel.Text += "\n\nDescription: " + plannerList[listBox.TabIndex][listBox.SelectedIndex].CourseDescription;
+                }
+
+                courseInfoLabel.Text += "\n\nCredits: " + Convert.ToString(plannerList[listBox.TabIndex][listBox.SelectedIndex].NumOfCredits);
+                courseInfoLabel.Text += "\nGS:";
+
+                int counter = 0;
+
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].L == true)
+                {
+                    courseInfoLabel.Text += " " + "L";
+                    counter++;
+                }
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].MA == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "MA";
+                    counter++;
+                }
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].CS == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "CS";
+                    counter++;
+                }
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].HU == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "HU";
+                    counter++;
+                }
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].SB == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "SB";
+                    counter++;
+                }
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].SQ == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "SQ";
+                    counter++;
+                }
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].SG == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "SG";
+                    counter++;
+                }
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].C == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "C";
+                    counter++;
+                }
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].G == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "G";
+                    counter++;
+                }
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].MA == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "H";
+                    counter++;
+                }
+                if (counter == 0)
+                {
+                    courseInfoLabel.Text += " " + "None";
+                }
+
+                courseInfoLabel.Text += "\nPre-requisite(s): ";
+
+                if (plannerList[listBox.TabIndex][listBox.SelectedIndex].PreRecs != null)
+                {
+                    counter = 0;
+                    foreach (string s in plannerList[listBox.TabIndex][listBox.SelectedIndex].PreRecs)
+                    {
+                        if (counter >= 1)
+                            courseInfoLabel.Text += ", ";
+                        courseInfoLabel.Text += s;
+                        counter++;
+                    }
+                }
+                else
+                    courseInfoLabel.Text += "None";
+
+                item = (Courses)plannerList[listBox.TabIndex][listBox.SelectedIndex];
+                selectedIndex = listBox.SelectedIndex;
+
             }
+
+
+            //var listBox = sender as ListBox;
+
+            //if (listBox.SelectedItem != null)
+            //{
+            //    sItem = (Courses)listBox.SelectedItem;
+            //    sSelectedIndex = listBox.SelectedIndex;
+            //    //MessageBox.Show(Convert.ToString(sSelectedIndex));
+
+            //    sListBox = listBox;
+            //    sListBoxIndex = listBox.TabIndex;
+
+            //    listBox.DoDragDrop(listBox.SelectedItem.ToString(), DragDropEffects.Copy);
+            //}
         }
-        
+
 
         private void yearOneFallListBox_DragEnter(object sender, DragEventArgs e)
         {
@@ -361,10 +480,10 @@ namespace DevilsConsilium
 
                 //searchResultListBox.Items.Remove(item);
                 //searchResultList.RemoveAt(selectedIndex);
-                
+
                 sListBox.Items.Remove(sItem);
 
-                
+
                 plannerList[sListBoxIndex].RemoveAt(sSelectedIndex);
 
                 sItem = null;
@@ -398,10 +517,10 @@ namespace DevilsConsilium
         public void LoadUpCourseList(List<Courses>[] list)
         {
             //Loop through every semester
-            for(int i = 0; i < list.Count(); i++)
+            for (int i = 0; i < list.Count(); i++)
             {
                 //Loop through every course in a semester
-                for(int j = 0; j < list[i].Count(); j++)
+                for (int j = 0; j < list[i].Count(); j++)
                 {
                     //Insert course into planner
                     plannerList[i].Add(list[i][j]);
@@ -418,7 +537,7 @@ namespace DevilsConsilium
         //Course display on load
         public void DisplayAddedCourse(Courses toAdd, int semester)
         {
-            switch(semester)
+            switch (semester)
             {
                 case 0:
                     yearOneFallListBox.Items.Add(toAdd);
@@ -487,9 +606,9 @@ namespace DevilsConsilium
         {
             bool add = true;
 
-            for(int i = 0; i < plannerList.Length; i++)
+            for (int i = 0; i < plannerList.Length; i++)
             {
-                for(int j = 0; j < plannerList[i].Count(); j++)
+                for (int j = 0; j < plannerList[i].Count(); j++)
                 {
                     if (plannerList[i][j].CourseNumber == courseNum)
                     {
@@ -499,6 +618,127 @@ namespace DevilsConsilium
             }
 
             return add;
+        }
+
+        private void yearOneFallListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            item = null;
+
+            if (yearOneFallListBox.SelectedIndex >= 0 && yearOneFallListBox.SelectedIndex < yearOneFallListBox.Items.Count)
+            {
+
+                courseInfoLabel.Text = "";
+
+                courseInfoLabel.Text += "Number: " + plannerList[0][yearOneFallListBox.SelectedIndex].CourseNumber;
+                courseInfoLabel.Text += "\n\nName: " + plannerList[0][yearOneFallListBox.SelectedIndex].CourseName;
+
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].CourseDescription.Length >= 235)
+                {
+                    courseInfoLabel.Text += "\n\nDescription: " + plannerList[0][yearOneFallListBox.SelectedIndex].CourseDescription.Substring(0, 235) + "...";
+                }
+                else
+                {
+                    courseInfoLabel.Text += "\n\nDescription: " + plannerList[0][yearOneFallListBox.SelectedIndex].CourseDescription;
+                }
+
+                courseInfoLabel.Text += "\n\nCredits: " + Convert.ToString(plannerList[0][yearOneFallListBox.SelectedIndex].NumOfCredits);
+                courseInfoLabel.Text += "\nGS:";
+
+                int counter = 0;
+
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].L == true)
+                {
+                    courseInfoLabel.Text += " " + "L";
+                    counter++;
+                }
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].MA == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "MA";
+                    counter++;
+                }
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].CS == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "CS";
+                    counter++;
+                }
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].HU == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "HU";
+                    counter++;
+                }
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].SB == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "SB";
+                    counter++;
+                }
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].SQ == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "SQ";
+                    counter++;
+                }
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].SG == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "SG";
+                    counter++;
+                }
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].C == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "C";
+                    counter++;
+                }
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].G == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "G";
+                    counter++;
+                }
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].MA == true)
+                {
+                    if (counter >= 1)
+                        courseInfoLabel.Text += " &&";
+                    courseInfoLabel.Text += " " + "H";
+                    counter++;
+                }
+                if (counter == 0)
+                {
+                    courseInfoLabel.Text += " " + "None";
+                }
+
+                courseInfoLabel.Text += "\nPre-requisite(s): ";
+
+                if (plannerList[0][yearOneFallListBox.SelectedIndex].PreRecs != null)
+                {
+                    counter = 0;
+                    foreach (string s in plannerList[0][yearOneFallListBox.SelectedIndex].PreRecs)
+                    {
+                        if (counter >= 1)
+                            courseInfoLabel.Text += ", ";
+                        courseInfoLabel.Text += s;
+                        counter++;
+                    }
+                }
+                else
+                    courseInfoLabel.Text += "None";
+
+                item = (Courses)plannerList[0][yearOneFallListBox.SelectedIndex];
+                selectedIndex = yearOneFallListBox.SelectedIndex;
+
+            }
         }
     }
 }
