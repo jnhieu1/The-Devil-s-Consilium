@@ -254,7 +254,7 @@ namespace DevilsConsilium
                 courseInfoLabel.Text = "";
 
                 courseInfoLabel.Text += "Number: " + plannerList[listBox.TabIndex][listBox.SelectedIndex].CourseNumber;
-                courseInfoLabel.Text += "\n\nName: " + plannerList[0][yearOneFallListBox.SelectedIndex].CourseName;
+                courseInfoLabel.Text += "\n\nName: " + plannerList[listBox.TabIndex][listBox.SelectedIndex].CourseName;
 
                 if (plannerList[listBox.TabIndex][listBox.SelectedIndex].CourseDescription.Length >= 235)
                 {
